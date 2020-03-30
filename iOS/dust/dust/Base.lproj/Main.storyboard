@@ -20,7 +20,72 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dR7-rR-qTR">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="384.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="미세먼지 앱" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBY-hy-yPW">
+                                                <rect key="frame" x="0.0" y="20" width="414" height="57.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smiley.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="XZO-Yv-Gfk">
+                                                <rect key="frame" x="130" y="88" width="154" height="153"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="XZO-Yv-Gfk" secondAttribute="height" multiplier="1:1" id="rOt-9z-dHT"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dlN-fc-U5x" userLabel="등급 표시">
+                                                <rect key="frame" x="0.0" y="251.5" width="414" height="38.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sh5-n0-hhe" userLabel="수치 표시">
+                                                <rect key="frame" x="0.0" y="300" width="207" height="38.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9NS-ND-dqb" userLabel="시간 표시">
+                                                <rect key="frame" x="207" y="300" width="207" height="38.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rz9-Cx-urB" userLabel="관측소 표시">
+                                                <rect key="frame" x="0.0" y="338.5" width="414" height="30.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="dlN-fc-U5x" firstAttribute="width" secondItem="dR7-rR-qTR" secondAttribute="width" id="1kW-Sb-bFY"/>
+                                            <constraint firstItem="XZO-Yv-Gfk" firstAttribute="centerX" secondItem="dR7-rR-qTR" secondAttribute="centerX" id="9hc-XV-uOQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="9NS-ND-dqb" secondAttribute="trailing" id="ACk-Ut-joZ"/>
+                                            <constraint firstItem="dlN-fc-U5x" firstAttribute="top" secondItem="XZO-Yv-Gfk" secondAttribute="bottom" constant="10" id="Abu-MU-UsQ"/>
+                                            <constraint firstItem="sh5-n0-hhe" firstAttribute="leading" secondItem="dR7-rR-qTR" secondAttribute="leading" id="CZc-eH-mOH"/>
+                                            <constraint firstItem="Rz9-Cx-urB" firstAttribute="leading" secondItem="dR7-rR-qTR" secondAttribute="leading" id="Cew-l1-v75"/>
+                                            <constraint firstItem="RBY-hy-yPW" firstAttribute="top" secondItem="dR7-rR-qTR" secondAttribute="top" constant="20" id="FWj-c3-ONb"/>
+                                            <constraint firstItem="dlN-fc-U5x" firstAttribute="centerX" secondItem="dR7-rR-qTR" secondAttribute="centerX" id="LMv-cF-wRR"/>
+                                            <constraint firstItem="RBY-hy-yPW" firstAttribute="centerX" secondItem="dR7-rR-qTR" secondAttribute="centerX" id="NRU-LQ-7oR"/>
+                                            <constraint firstItem="9NS-ND-dqb" firstAttribute="height" secondItem="sh5-n0-hhe" secondAttribute="height" id="OMX-zI-Nqf"/>
+                                            <constraint firstItem="sh5-n0-hhe" firstAttribute="height" secondItem="dR7-rR-qTR" secondAttribute="height" multiplier="0.1" id="S6b-Rq-tth"/>
+                                            <constraint firstItem="sh5-n0-hhe" firstAttribute="width" secondItem="dR7-rR-qTR" secondAttribute="width" multiplier="0.5" id="WCZ-KN-9aU"/>
+                                            <constraint firstItem="sh5-n0-hhe" firstAttribute="top" secondItem="dlN-fc-U5x" secondAttribute="bottom" constant="10" id="WDm-l3-qIK"/>
+                                            <constraint firstItem="dlN-fc-U5x" firstAttribute="height" secondItem="dR7-rR-qTR" secondAttribute="height" multiplier="0.1" id="ak5-Dc-j2C"/>
+                                            <constraint firstItem="XZO-Yv-Gfk" firstAttribute="height" secondItem="dR7-rR-qTR" secondAttribute="height" multiplier="0.4" id="cBz-gE-mE4"/>
+                                            <constraint firstItem="RBY-hy-yPW" firstAttribute="height" secondItem="dR7-rR-qTR" secondAttribute="height" multiplier="0.15" id="dCy-Yr-LTc"/>
+                                            <constraint firstItem="Rz9-Cx-urB" firstAttribute="height" secondItem="dR7-rR-qTR" secondAttribute="height" multiplier="0.08" id="gr1-Mu-nw1"/>
+                                            <constraint firstItem="9NS-ND-dqb" firstAttribute="width" secondItem="sh5-n0-hhe" secondAttribute="width" id="hTE-Wb-7xk"/>
+                                            <constraint firstAttribute="trailing" secondItem="RBY-hy-yPW" secondAttribute="trailing" id="hk4-aO-WPK"/>
+                                            <constraint firstItem="Rz9-Cx-urB" firstAttribute="width" secondItem="dR7-rR-qTR" secondAttribute="width" id="l0T-pH-Jf7"/>
+                                            <constraint firstItem="Rz9-Cx-urB" firstAttribute="top" secondItem="sh5-n0-hhe" secondAttribute="bottom" id="q2k-Qg-oCl"/>
+                                            <constraint firstAttribute="trailing" secondItem="Rz9-Cx-urB" secondAttribute="trailing" id="sQ7-PX-IZZ"/>
+                                            <constraint firstItem="RBY-hy-yPW" firstAttribute="leading" secondItem="dR7-rR-qTR" secondAttribute="leading" id="sfy-o3-3iI"/>
+                                            <constraint firstItem="9NS-ND-dqb" firstAttribute="top" secondItem="dlN-fc-U5x" secondAttribute="bottom" constant="10" id="uLq-42-2MY"/>
+                                            <constraint firstItem="XZO-Yv-Gfk" firstAttribute="top" secondItem="RBY-hy-yPW" secondAttribute="bottom" constant="10" id="yvk-9C-4U0"/>
+                                        </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9FS-mc-NMH">
                                         <rect key="frame" x="0.0" y="384.5" width="414" height="384.5"/>
@@ -124,6 +189,7 @@
     </scenes>
     <resources>
         <image name="clock.fill" catalog="system" width="128" height="121"/>
+        <image name="smiley.fill" catalog="system" width="128" height="121"/>
         <image name="smoke.fill" catalog="system" width="128" height="90"/>
     </resources>
 </document>
