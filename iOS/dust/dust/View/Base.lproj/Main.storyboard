@@ -27,33 +27,33 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smiley.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="XZO-Yv-Gfk">
-                                                <rect key="frame" x="119" y="82.333333333333329" width="137" height="135.66666666666669"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="XZO-Yv-Gfk" secondAttribute="height" multiplier="1:1" id="rOt-9z-dHT"/>
-                                                </constraints>
-                                            </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dlN-fc-U5x" userLabel="등급 표시">
-                                                <rect key="frame" x="0.0" y="228.33333333333331" width="375" height="34.333333333333314"/>
+                                                <rect key="frame" x="0.0" y="112.33333333333333" width="375" height="34.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sh5-n0-hhe" userLabel="수치 표시">
-                                                <rect key="frame" x="0.0" y="272.66666666666669" width="187.66666666666666" height="34.333333333333314"/>
+                                                <rect key="frame" x="0.0" y="156.66666666666666" width="187.66666666666666" height="34.333333333333343"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9NS-ND-dqb" userLabel="시간 표시">
-                                                <rect key="frame" x="187.66666666666663" y="272.66666666666669" width="187.33333333333337" height="34.333333333333314"/>
+                                                <rect key="frame" x="187.66666666666663" y="156.66666666666666" width="187.33333333333337" height="34.333333333333343"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rz9-Cx-urB" userLabel="관측소 표시">
-                                                <rect key="frame" x="0.0" y="307" width="375" height="27.333333333333314"/>
+                                                <rect key="frame" x="0.0" y="191" width="375" height="27.333333333333343"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKa-9G-F3U">
+                                                <rect key="frame" x="166.66666666666666" y="81.333333333333329" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -61,9 +61,7 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstItem="dlN-fc-U5x" firstAttribute="width" secondItem="dR7-rR-qTR" secondAttribute="width" id="1kW-Sb-bFY"/>
-                                            <constraint firstItem="XZO-Yv-Gfk" firstAttribute="centerX" secondItem="dR7-rR-qTR" secondAttribute="centerX" id="9hc-XV-uOQ"/>
                                             <constraint firstAttribute="trailing" secondItem="9NS-ND-dqb" secondAttribute="trailing" id="ACk-Ut-joZ"/>
-                                            <constraint firstItem="dlN-fc-U5x" firstAttribute="top" secondItem="XZO-Yv-Gfk" secondAttribute="bottom" constant="10" id="Abu-MU-UsQ"/>
                                             <constraint firstItem="sh5-n0-hhe" firstAttribute="leading" secondItem="dR7-rR-qTR" secondAttribute="leading" id="CZc-eH-mOH"/>
                                             <constraint firstItem="Rz9-Cx-urB" firstAttribute="leading" secondItem="dR7-rR-qTR" secondAttribute="leading" id="Cew-l1-v75"/>
                                             <constraint firstItem="RBY-hy-yPW" firstAttribute="top" secondItem="dR7-rR-qTR" secondAttribute="top" constant="20" id="FWj-c3-ONb"/>
@@ -73,18 +71,19 @@
                                             <constraint firstItem="sh5-n0-hhe" firstAttribute="height" secondItem="dR7-rR-qTR" secondAttribute="height" multiplier="0.1" id="S6b-Rq-tth"/>
                                             <constraint firstItem="sh5-n0-hhe" firstAttribute="width" secondItem="dR7-rR-qTR" secondAttribute="width" multiplier="0.5" id="WCZ-KN-9aU"/>
                                             <constraint firstItem="sh5-n0-hhe" firstAttribute="top" secondItem="dlN-fc-U5x" secondAttribute="bottom" constant="10" id="WDm-l3-qIK"/>
+                                            <constraint firstItem="dlN-fc-U5x" firstAttribute="top" secondItem="iKa-9G-F3U" secondAttribute="bottom" constant="10" id="Wnm-PM-ZQy"/>
                                             <constraint firstItem="dlN-fc-U5x" firstAttribute="height" secondItem="dR7-rR-qTR" secondAttribute="height" multiplier="0.1" id="ak5-Dc-j2C"/>
-                                            <constraint firstItem="XZO-Yv-Gfk" firstAttribute="height" secondItem="dR7-rR-qTR" secondAttribute="height" multiplier="0.4" id="cBz-gE-mE4"/>
+                                            <constraint firstItem="iKa-9G-F3U" firstAttribute="centerX" secondItem="dR7-rR-qTR" secondAttribute="centerX" id="bvE-Qx-tOQ"/>
                                             <constraint firstItem="RBY-hy-yPW" firstAttribute="height" secondItem="dR7-rR-qTR" secondAttribute="height" multiplier="0.15" id="dCy-Yr-LTc"/>
                                             <constraint firstItem="Rz9-Cx-urB" firstAttribute="height" secondItem="dR7-rR-qTR" secondAttribute="height" multiplier="0.08" id="gr1-Mu-nw1"/>
                                             <constraint firstItem="9NS-ND-dqb" firstAttribute="width" secondItem="sh5-n0-hhe" secondAttribute="width" id="hTE-Wb-7xk"/>
                                             <constraint firstAttribute="trailing" secondItem="RBY-hy-yPW" secondAttribute="trailing" id="hk4-aO-WPK"/>
                                             <constraint firstItem="Rz9-Cx-urB" firstAttribute="width" secondItem="dR7-rR-qTR" secondAttribute="width" id="l0T-pH-Jf7"/>
                                             <constraint firstItem="Rz9-Cx-urB" firstAttribute="top" secondItem="sh5-n0-hhe" secondAttribute="bottom" id="q2k-Qg-oCl"/>
+                                            <constraint firstItem="iKa-9G-F3U" firstAttribute="top" secondItem="RBY-hy-yPW" secondAttribute="bottom" constant="10" id="qO6-o1-J2L"/>
                                             <constraint firstAttribute="trailing" secondItem="Rz9-Cx-urB" secondAttribute="trailing" id="sQ7-PX-IZZ"/>
                                             <constraint firstItem="RBY-hy-yPW" firstAttribute="leading" secondItem="dR7-rR-qTR" secondAttribute="leading" id="sfy-o3-3iI"/>
                                             <constraint firstItem="9NS-ND-dqb" firstAttribute="top" secondItem="dlN-fc-U5x" secondAttribute="bottom" constant="10" id="uLq-42-2MY"/>
-                                            <constraint firstItem="XZO-Yv-Gfk" firstAttribute="top" secondItem="RBY-hy-yPW" secondAttribute="bottom" constant="10" id="yvk-9C-4U0"/>
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="40" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9FS-mc-NMH">
@@ -153,7 +152,7 @@
                     <tabBarItem key="tabBarItem" title="미세먼지" image="smoke.fill" catalog="system" selectedImage="smoke.fill" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="chartTableView" destination="9FS-mc-NMH" id="SBm-Q5-myi"/>
-                        <outlet property="emoticonImageView" destination="XZO-Yv-Gfk" id="2rt-2h-QM4"/>
+                        <outlet property="emoticonLabel" destination="iKa-9G-F3U" id="CMj-xJ-mKD"/>
                         <outlet property="gradeLabel" destination="dlN-fc-U5x" id="4b6-kE-7Nx"/>
                         <outlet property="numericLabel" destination="sh5-n0-hhe" id="Hgc-iI-162"/>
                         <outlet property="stationLabel" destination="Rz9-Cx-urB" id="Yw8-dp-8bL"/>
@@ -221,7 +220,6 @@
     </scenes>
     <resources>
         <image name="clock.fill" catalog="system" width="128" height="121"/>
-        <image name="smiley.fill" catalog="system" width="128" height="121"/>
         <image name="smoke.fill" catalog="system" width="128" height="90"/>
     </resources>
 </document>
