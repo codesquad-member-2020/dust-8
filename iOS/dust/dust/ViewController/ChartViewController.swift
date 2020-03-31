@@ -10,7 +10,7 @@ import UIKit
 
 class ChartViewController: UIViewController {
     
-    @IBOutlet weak var summaryView: SummaryView!
+    @IBOutlet weak var summaryView: GradationView!
     @IBOutlet weak var chartTableView: UITableView!
     @IBOutlet weak var emoticonLabel: UILabel!
     @IBOutlet weak var gradeLabel: UILabel!
@@ -18,24 +18,20 @@ class ChartViewController: UIViewController {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var stationLabel: UILabel!
     
-    private var model = [DustInfoModel]()
+    private var modelManager = DustInfoModelManager()
     private var dataSource = ChartTableViewDatasource()
     private var delegate = ChartTableViewDelegate()
     private let emoticonUnicode = ["Good" : "\u{1F600}", "Normal" : "\u{1F642}", "Bad" : "\u{1F637}", "Terrible" : "\u{1F631}"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        for index in 0..<24 {
-            model.append(DustInfoModel(numeric: Int.random(in: 0...200), station: "강남구", time: String(index)))
-        }
-        
+    
         setupDelegate()
         setupDatasource()
         
         self.emoticonLabel.font = UIFont(name: "TimesNewRomanPSMT", size: self.summaryView.frame.height * 0.35)
         
-        changeSummaryViewUI(model: model[0])
+        changeSummaryViewUI(model: modelManager.index(of: 0))
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(changeSummaryViewUI(_:)),
@@ -44,12 +40,12 @@ class ChartViewController: UIViewController {
     }
     
     func setupDelegate() {
-        delegate.model = model
+        delegate.modelManager = modelManager
         self.chartTableView.delegate = delegate
     }
     
     func setupDatasource() {
-        dataSource.model = model
+        dataSource.modelManger = modelManager
         self.chartTableView.dataSource = dataSource
     }
     
@@ -60,7 +56,6 @@ class ChartViewController: UIViewController {
             self.stationLabel.text = String(model.station)
             self.timeLabel.text = String(model.time)
             self.gradeLabel.text = model.grade.rawValue
-            
             self.emoticonLabel.text = self.emoticonUnicode[model.grade.rawValue]
         }
     }
