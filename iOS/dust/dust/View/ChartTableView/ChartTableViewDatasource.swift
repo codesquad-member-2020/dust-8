@@ -18,7 +18,7 @@ class ChartTableViewDatasource: NSObject, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChartCell") as! ChartTableViewCell
-        let currentModel = model?[indexPath.row] ?? DustInfoModel(numeric: 0)
+        let currentModel = model?[indexPath.row] ?? DustInfoModel(numeric: 0, station: "", time: "0")
         
         cell.bar.frame = CGRect(x: 0, y: 0, width: cell.bounds.width * CGFloat(currentModel.percentage), height: cell.bounds.height)
         cell.bar.backgroundColor = UIColor(named: currentModel.grade.rawValue)

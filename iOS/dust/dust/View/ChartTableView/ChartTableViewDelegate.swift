@@ -15,7 +15,7 @@ class ChartTableViewDelegate: NSObject, UITableViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let tableView = scrollView as? UITableView ?? UITableView()
         let visibleIndexPath = tableView.indexPathsForVisibleRows?.first ?? [0,0]
-        let firstModel = model?[visibleIndexPath.row] ?? DustInfoModel(numeric: 0)
+        let firstModel = model?[visibleIndexPath.row] ?? DustInfoModel(numeric: 0, station: "", time: "0")
         NotificationCenter.default.post(name: .FirstCellOnTalbeView,
                                         object: nil,
                                         userInfo: ["model": firstModel])
