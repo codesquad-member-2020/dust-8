@@ -104,14 +104,15 @@
                                                             <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6x-Wr-ISc">
-                                                            <rect key="frame" x="333.33333333333331" y="0.0" width="41.666666666666686" height="40"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="A6x-Wr-ISc" secondAttribute="trailing" id="N3O-iK-3qY"/>
+                                                        <constraint firstAttribute="trailing" secondItem="A6x-Wr-ISc" secondAttribute="trailing" id="Hb0-M1-EkI"/>
+                                                        <constraint firstItem="A6x-Wr-ISc" firstAttribute="leading" secondItem="TKB-vy-6tX" secondAttribute="leading" id="OLl-hw-okT"/>
                                                         <constraint firstItem="A6x-Wr-ISc" firstAttribute="top" secondItem="TKB-vy-6tX" secondAttribute="top" id="PVr-o4-zBY"/>
                                                         <constraint firstAttribute="bottom" secondItem="A6x-Wr-ISc" secondAttribute="bottom" id="x9s-qz-Vgp"/>
                                                     </constraints>
@@ -152,7 +153,12 @@
                     <tabBarItem key="tabBarItem" title="미세먼지" image="smoke.fill" catalog="system" selectedImage="smoke.fill" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="chartTableView" destination="9FS-mc-NMH" id="SBm-Q5-myi"/>
+                        <outlet property="emoticonImageView" destination="XZO-Yv-Gfk" id="2rt-2h-QM4"/>
+                        <outlet property="gradeLabel" destination="dlN-fc-U5x" id="4b6-kE-7Nx"/>
+                        <outlet property="numericLabel" destination="sh5-n0-hhe" id="Hgc-iI-162"/>
+                        <outlet property="stationLabel" destination="Rz9-Cx-urB" id="Yw8-dp-8bL"/>
                         <outlet property="summaryView" destination="dR7-rR-qTR" id="rGn-wC-JAn"/>
+                        <outlet property="timeLabel" destination="9NS-ND-dqb" id="wUL-bm-ztJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
