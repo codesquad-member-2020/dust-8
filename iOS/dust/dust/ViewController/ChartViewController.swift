@@ -10,8 +10,10 @@ import UIKit
 
 class ChartViewController: UIViewController {
 
+    @IBOutlet weak var summaryView: SummaryView!
     @IBOutlet weak var chartTableView: UITableView!
-    var model = [DustInfoModel]()
+    
+    private var model = [DustInfoModel]()
     private var dataSource = ChartTableViewDatasource()
     private var delegate = ChartTableViewDelegate()
     
@@ -23,7 +25,21 @@ class ChartViewController: UIViewController {
         }
         
         dataSource.model = model
+        delegate.model = model
         self.chartTableView.dataSource = dataSource
+        self.chartTableView.delegate = delegate
+        
+        summaryView.state = model[0].grade
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(changeSummaryViewUI(_:)),
+                                               name: .FirstCellOnTalbeView,
+                                               object: nil)
+    }
+    
+    @objc func changeSummaryViewUI(_ notification: Notification) {
+        guard let model = notification.userInfo?["model"] as? DustInfoModel else {return}
+        summaryView.state = model.grade
     }
 }
 
