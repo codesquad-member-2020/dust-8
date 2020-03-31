@@ -91,35 +91,28 @@
                                         <rect key="frame" x="0.0" y="342.66666666666674" width="375" height="342.33333333333326"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ChartCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="pDT-mw-aYw" customClass="ChartTableViewCell" customModule="dust" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="375" height="20.666666030883789"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ChartCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChartCell" id="pDT-mw-aYw" customClass="ChartTableViewCell" customModule="dust" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="375" height="21.333333969116211"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pDT-mw-aYw" id="TKB-vy-6tX">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="20.666666030883789"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="21.333333969116211"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3aH-nN-SSd">
-                                                            <rect key="frame" x="0.0" y="0.0" width="10" height="20.666666666666668"/>
+                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3aH-nN-SSd">
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="20.666666666666668"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="10" id="shn-h7-ljG"/>
-                                                            </constraints>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6x-Wr-ISc">
-                                                            <rect key="frame" x="10" y="0.0" width="365" height="20.666666666666668"/>
+                                                            <rect key="frame" x="333.33333333333331" y="0.0" width="41.666666666666686" height="21.333333333333332"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="3aH-nN-SSd" firstAttribute="top" secondItem="TKB-vy-6tX" secondAttribute="top" id="2An-s0-Guu"/>
                                                         <constraint firstAttribute="trailing" secondItem="A6x-Wr-ISc" secondAttribute="trailing" id="N3O-iK-3qY"/>
-                                                        <constraint firstItem="3aH-nN-SSd" firstAttribute="leading" secondItem="TKB-vy-6tX" secondAttribute="leading" id="O3T-MR-MYq"/>
                                                         <constraint firstItem="A6x-Wr-ISc" firstAttribute="top" secondItem="TKB-vy-6tX" secondAttribute="top" id="PVr-o4-zBY"/>
-                                                        <constraint firstItem="3aH-nN-SSd" firstAttribute="height" secondItem="TKB-vy-6tX" secondAttribute="height" id="QcZ-m0-X4u"/>
-                                                        <constraint firstAttribute="bottom" secondItem="3aH-nN-SSd" secondAttribute="bottom" id="T9c-ff-Xdu"/>
-                                                        <constraint firstItem="A6x-Wr-ISc" firstAttribute="leading" secondItem="3aH-nN-SSd" secondAttribute="trailing" id="ZVk-iW-ABj"/>
                                                         <constraint firstAttribute="bottom" secondItem="A6x-Wr-ISc" secondAttribute="bottom" id="x9s-qz-Vgp"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
@@ -157,6 +150,9 @@
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="미세먼지" image="smoke.fill" catalog="system" selectedImage="smoke.fill" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="chartTableView" destination="9FS-mc-NMH" id="SBm-Q5-myi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
