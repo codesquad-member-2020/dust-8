@@ -33,7 +33,7 @@ class ChartViewController: UIViewController {
         setupDelegate()
         setupDatasource()
         
-        self.emoticonLabel.font = UIFont(name: self.timeLabel.font.fontName, size: self.summaryView.frame.height * 0.35)
+        self.emoticonLabel.font = UIFont(name: "TimesNewRomanPSMT", size: self.summaryView.frame.height * 0.35)
         
         changeSummaryViewUI(model: model[0])
         
