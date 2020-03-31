@@ -1,0 +1,115 @@
+body {
+  margin-top: 20px;
+  font-family: "Open Sans", sans-serif;
+  color: #282828;
+}
+
+.tab-bar {
+  display: flex;
+  height: 50px;
+}
+
+.tab-bar-item {
+  width: 100%;
+  outline: solid 1px #00000080;
+}
+
+div#dust {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.info-window {
+  width: 100%;
+  height: 50%;
+  text-align: center;
+}
+
+.info-window > h2,
+.info-emoji,
+.info-grade {
+  width: 100%;
+}
+
+.info-emoji {
+  font-size: 1000%;
+}
+
+.info-statistics {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+span.statistics-numeric:after {
+  content: "\&micro;g/m³";
+}
+
+span.statistics-time:before {
+  content: "오늘 ";
+}
+
+span.statistics-time:after {
+  content: ":00";
+}
+
+.dust-charts {
+  width: 100%;
+  height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.skills {
+  width: 80%;
+  max-width: 960px;
+  height: 780px;
+  margin: auto;
+  position: relative;
+}
+
+.charts {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.chart {
+  margin: 30px 0 0;
+}
+.chart:first-child {
+  margin: 0;
+}
+
+.chart--horiz {
+  overflow: hidden;
+}
+
+.chart__bar {
+  height: 30px;
+  margin-bottom: 10px;
+  background: linear-gradient(to left, #4cb8c4, #3cd3ad);
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  opacity: 0;
+  animation: 1s anim-lightspeed-in ease forwards;
+}
+
+.chart__label {
+  padding-left: 10px;
+  line-height: 30px;
+  color: white;
+}
+
+@keyframes anim-lightspeed-in {
+  0% {
+    transform: translateX(-200%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
