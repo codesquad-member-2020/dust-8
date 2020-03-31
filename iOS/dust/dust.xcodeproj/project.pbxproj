@@ -15,11 +15,12 @@
 		A53107052431F758005C95F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A53107042431F758005C95F7 /* Assets.xcassets */; };
 		A53107082431F758005C95F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A53107062431F758005C95F7 /* LaunchScreen.storyboard */; };
 		A53107132431F758005C95F7 /* dustTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53107122431F758005C95F7 /* dustTests.swift */; };
-		A531072324324BA5005C95F7 /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A531072224324BA5005C95F7 /* SummaryView.swift */; };
+		A531072324324BA5005C95F7 /* GradationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A531072224324BA5005C95F7 /* GradationView.swift */; };
 		A531072B2432FB8D005C95F7 /* ChartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A531072A2432FB8D005C95F7 /* ChartTableViewCell.swift */; };
 		A531072D2432FD4E005C95F7 /* ChartTableViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A531072C2432FD4E005C95F7 /* ChartTableViewDatasource.swift */; };
 		A531072F2432FD73005C95F7 /* ChartTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A531072E2432FD73005C95F7 /* ChartTableViewDelegate.swift */; };
 		A531073224331228005C95F7 /* DustInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A531073124331228005C95F7 /* DustInfoModel.swift */; };
+		A531073424337E55005C95F7 /* DustInfoModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A531073324337E55005C95F7 /* DustInfoModelManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,11 +46,12 @@
 		A531070E2431F758005C95F7 /* dustTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = dustTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A53107122431F758005C95F7 /* dustTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dustTests.swift; sourceTree = "<group>"; };
 		A53107142431F758005C95F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A531072224324BA5005C95F7 /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
+		A531072224324BA5005C95F7 /* GradationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradationView.swift; sourceTree = "<group>"; };
 		A531072A2432FB8D005C95F7 /* ChartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartTableViewCell.swift; sourceTree = "<group>"; };
 		A531072C2432FD4E005C95F7 /* ChartTableViewDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartTableViewDatasource.swift; sourceTree = "<group>"; };
 		A531072E2432FD73005C95F7 /* ChartTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartTableViewDelegate.swift; sourceTree = "<group>"; };
 		A531073124331228005C95F7 /* DustInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DustInfoModel.swift; sourceTree = "<group>"; };
+		A531073324337E55005C95F7 /* DustInfoModelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DustInfoModelManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,7 +136,7 @@
 				A53107292432FB59005C95F7 /* ChartTableView */,
 				A53107012431F756005C95F7 /* Main.storyboard */,
 				A53107062431F758005C95F7 /* LaunchScreen.storyboard */,
-				A531072224324BA5005C95F7 /* SummaryView.swift */,
+				A531072224324BA5005C95F7 /* GradationView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -153,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				A531073124331228005C95F7 /* DustInfoModel.swift */,
+				A531073324337E55005C95F7 /* DustInfoModelManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -263,8 +266,9 @@
 				A531073224331228005C95F7 /* DustInfoModel.swift in Sources */,
 				A53106FE2431F756005C95F7 /* ChartViewController.swift in Sources */,
 				A531072D2432FD4E005C95F7 /* ChartTableViewDatasource.swift in Sources */,
-				A531072324324BA5005C95F7 /* SummaryView.swift in Sources */,
+				A531072324324BA5005C95F7 /* GradationView.swift in Sources */,
 				A53106FA2431F756005C95F7 /* AppDelegate.swift in Sources */,
+				A531073424337E55005C95F7 /* DustInfoModelManager.swift in Sources */,
 				A53106FC2431F756005C95F7 /* SceneDelegate.swift in Sources */,
 				A531072F2432FD73005C95F7 /* ChartTableViewDelegate.swift in Sources */,
 			);
