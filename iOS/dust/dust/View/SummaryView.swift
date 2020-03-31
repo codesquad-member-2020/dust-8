@@ -10,10 +10,8 @@ import UIKit
 
 class SummaryView: UIView {
     
-
-    
     private var gradientLayer: CAGradientLayer
-    private var state: DustInfoModel.Grade {
+    var state: DustInfoModel.Grade {
         didSet {
             setGradientColor(state: state)
         }
