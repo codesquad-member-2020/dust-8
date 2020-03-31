@@ -10,15 +10,10 @@ import UIKit
 
 class SummaryView: UIView {
     
-    enum State: String {
-        case Good
-        case Normal
-        case Bad
-        case Terrible
-    }
+
     
     private var gradientLayer: CAGradientLayer
-    private var state: State {
+    private var state: DustInfoModel.Grade {
         didSet {
             setGradientColor(state: state)
         }
@@ -38,7 +33,7 @@ class SummaryView: UIView {
         self.gradientLayer.frame = self.bounds
     }
     
-    func setGradientColor(state: State) {
+    func setGradientColor(state: DustInfoModel.Grade) {
         DispatchQueue.main.async {
             self.gradientLayer.colors = [UIColor(named: state.rawValue)?.cgColor ?? UIColor.white.cgColor, UIColor.white.cgColor]
             self.layer.insertSublayer(self.gradientLayer, at: 0)

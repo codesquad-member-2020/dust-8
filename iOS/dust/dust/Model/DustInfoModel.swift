@@ -9,11 +9,26 @@
 import Foundation
 
 struct DustInfoModel {
+    
+    enum Grade: String, CaseIterable {
+        case Good
+        case Normal
+        case Bad
+        case Terrible
+        
+        init(index: Int) {
+            self = Grade.allCases[index]
+        }
+    }
+    
     var numeric: Int
     var percentage: Double
+    var grade: Grade
+    
     
     init(numeric: Int) {
         self.numeric = numeric
         self.percentage = (Double(numeric) > 200.0 ? 200.0 : Double(numeric)) / 200
+        self.grade = Grade(index: Int(percentage * 100) / (100 / Grade.allCases.count))
     }
 }
