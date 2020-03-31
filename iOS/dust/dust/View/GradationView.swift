@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SummaryView: UIView {
+class GradationView: UIView {
     
     private var gradientLayer: CAGradientLayer
     var state: DustInfoModel.Grade {
