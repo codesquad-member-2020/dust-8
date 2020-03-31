@@ -29,6 +29,6 @@ struct DustInfoModel {
     init(numeric: Int) {
         self.numeric = numeric
         self.percentage = (Double(numeric) > 200.0 ? 200.0 : Double(numeric)) / 200
-        self.grade = Grade(index: Int(percentage * 100) / (100 / Grade.allCases.count))
+        self.grade = Grade(index: Int(percentage * 100) / (100 / Grade.allCases.count) >= 4 ? 3 : Int(percentage * 100) / (100 / Grade.allCases.count))
     }
 }
