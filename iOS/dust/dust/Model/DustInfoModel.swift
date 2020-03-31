@@ -10,7 +10,11 @@ import Foundation
 
 struct DustInfoModel {
     
-    enum Grade: String, CaseIterable {
+    enum Grade: String, CaseIterable, CustomStringConvertible {
+        var description: String {
+            return self.rawValue
+        }
+        
         case Good
         case Normal
         case Bad

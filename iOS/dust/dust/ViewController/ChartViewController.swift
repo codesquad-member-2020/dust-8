@@ -10,7 +10,7 @@ import UIKit
 
 class ChartViewController: UIViewController {
     
-    @IBOutlet weak var summaryView: GradationView!
+    @IBOutlet weak var gradationView: GradationView!
     @IBOutlet weak var chartTableView: UITableView!
     @IBOutlet weak var emoticonLabel: UILabel!
     @IBOutlet weak var gradeLabel: UILabel!
@@ -29,9 +29,9 @@ class ChartViewController: UIViewController {
         setupDelegate()
         setupDatasource()
         
-        self.emoticonLabel.font = UIFont(name: "TimesNewRomanPSMT", size: self.summaryView.frame.height * 0.35)
+        self.emoticonLabel.font = UIFont(name: "TimesNewRomanPSMT", size: self.gradationView.frame.height * 0.35)
         
-        changeSummaryViewUI(model: modelManager.index(of: 0))
+        changeGradationViewUI(model: modelManager.index(of: 0))
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(changeSummaryViewUI(_:)),
@@ -49,20 +49,20 @@ class ChartViewController: UIViewController {
         self.chartTableView.dataSource = dataSource
     }
     
-    func changeSummaryViewUI(model: DustInfoModel) {
+    func changeGradationViewUI(model: DustInfoModel) {
         DispatchQueue.main.async {
-            self.summaryView.state = model.grade
+            self.gradationView.setGradientColor(state: "\(model.grade)")
             self.numericLabel.text = String(model.numeric)
             self.stationLabel.text = String(model.station)
             self.timeLabel.text = String(model.time)
-            self.gradeLabel.text = model.grade.rawValue
-            self.emoticonLabel.text = self.emoticonUnicode[model.grade.rawValue]
+            self.gradeLabel.text = "\(model.grade)"
+            self.emoticonLabel.text = self.emoticonUnicode["\(model.grade)"]
         }
     }
     
     @objc func changeSummaryViewUI(_ notification: Notification) {
         guard let model = notification.userInfo?["model"] as? DustInfoModel else {return}
-        changeSummaryViewUI(model: model)
+        changeGradationViewUI(model: model)
     }
 }
 

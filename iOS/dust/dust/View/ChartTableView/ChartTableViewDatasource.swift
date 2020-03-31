@@ -21,7 +21,7 @@ class ChartTableViewDatasource: NSObject, UITableViewDataSource {
         let currentModel = modelManger?.index(of: indexPath.row) ?? DustInfoModel(numeric: 0, station: "", time: "0")
         
         cell.bar.frame = CGRect(x: 0, y: 0, width: cell.bounds.width * CGFloat(currentModel.percentage), height: cell.bounds.height)
-        cell.bar.backgroundColor = UIColor(named: currentModel.grade.rawValue)
+        cell.bar.backgroundColor = UIColor(named: "\(currentModel.grade)")
         cell.numeric.text = String(currentModel.numeric)
         
         return cell

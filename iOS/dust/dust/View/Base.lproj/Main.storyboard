@@ -153,10 +153,10 @@
                     <connections>
                         <outlet property="chartTableView" destination="9FS-mc-NMH" id="SBm-Q5-myi"/>
                         <outlet property="emoticonLabel" destination="iKa-9G-F3U" id="CMj-xJ-mKD"/>
+                        <outlet property="gradationView" destination="dR7-rR-qTR" id="rGn-wC-JAn"/>
                         <outlet property="gradeLabel" destination="dlN-fc-U5x" id="4b6-kE-7Nx"/>
                         <outlet property="numericLabel" destination="sh5-n0-hhe" id="Hgc-iI-162"/>
                         <outlet property="stationLabel" destination="Rz9-Cx-urB" id="Yw8-dp-8bL"/>
-                        <outlet property="summaryView" destination="dR7-rR-qTR" id="rGn-wC-JAn"/>
                         <outlet property="timeLabel" destination="9NS-ND-dqb" id="wUL-bm-ztJ"/>
                     </connections>
                 </viewController>

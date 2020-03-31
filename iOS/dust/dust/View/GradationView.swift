@@ -11,29 +11,22 @@ import UIKit
 class GradationView: UIView {
     
     private var gradientLayer: CAGradientLayer
-    var state: DustInfoModel.Grade {
-        didSet {
-            setGradientColor(state: state)
-        }
-    }
     
     override init(frame: CGRect) {
         self.gradientLayer = CAGradientLayer()
-        self.state = .Normal
         super.init(frame: frame)
         self.gradientLayer.frame = self.bounds
     }
     
     required init?(coder: NSCoder) {
         self.gradientLayer = CAGradientLayer()
-        self.state = .Normal
         super.init(coder: coder)
         self.gradientLayer.frame = self.bounds
     }
     
-    func setGradientColor(state: DustInfoModel.Grade) {
+    func setGradientColor(state: String) {
         DispatchQueue.main.async {
-            self.gradientLayer.colors = [UIColor(named: state.rawValue)?.cgColor ?? UIColor.white.cgColor, UIColor.white.cgColor]
+            self.gradientLayer.colors = [UIColor(named: state)?.cgColor ?? UIColor.white.cgColor, UIColor.white.cgColor]
             self.layer.insertSublayer(self.gradientLayer, at: 0)
         }
     }
