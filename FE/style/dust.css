@@ -41,7 +41,7 @@ div#dust {
 }
 
 span.statistics-numeric:after {
-  content: "\&micro;g/m³";
+  content: "𝜇g/m³";
 }
 
 span.statistics-time:before {
