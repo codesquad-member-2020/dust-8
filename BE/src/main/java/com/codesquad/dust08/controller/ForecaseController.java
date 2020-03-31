@@ -1,5 +1,7 @@
 package com.codesquad.dust08.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -7,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/forecase")
 public class ForecaseController {
+    private static final Logger log = LoggerFactory.getLogger(ForecaseController.class);
     // 24시간 대기오염 이미지 호출
     @GetMapping("/images")
     public String getOverallImages() {

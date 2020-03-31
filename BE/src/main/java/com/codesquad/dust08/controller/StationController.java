@@ -1,5 +1,7 @@
 package com.codesquad.dust08.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -8,10 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/stations")
 public class StationController {
+    private static final Logger log = LoggerFactory.getLogger(StationController.class);
     // 위도, 경도에서 가까운 측정소 반환
     @GetMapping("")
     public String getStationName(double latitude, double longitude) {
-
         return "{ \"stationName\" : \"강남구\" }";
     }
 
