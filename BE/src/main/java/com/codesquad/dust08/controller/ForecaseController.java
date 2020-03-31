@@ -11,7 +11,10 @@ public class ForecaseController {
     @GetMapping("/images")
     public String getOverallImages() {
 
-        return "http://www.airkorea.or.kr/file/viewImage/?atch_id=138717";
+        return "성공 : { \"imageUrl1\": \"http://www.airkorea.or.kr/file/viewImage/?atch_id=138717\",\n" +
+                "            \"imageUrl2\": \"http://www.airkorea.or.kr/file/viewImage/?atch_id=138718\",\n" +
+                "            \"imageUrl3\": \"http://www.airkorea.or.kr/file/viewImage/?atch_id=138719\"\n" +
+                "}";
     }
 
     // 예보 문구 출력 호출
