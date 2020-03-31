@@ -66,7 +66,6 @@
                                             <constraint firstItem="Rz9-Cx-urB" firstAttribute="leading" secondItem="dR7-rR-qTR" secondAttribute="leading" id="Cew-l1-v75"/>
                                             <constraint firstItem="RBY-hy-yPW" firstAttribute="top" secondItem="dR7-rR-qTR" secondAttribute="top" constant="20" id="FWj-c3-ONb"/>
                                             <constraint firstItem="dlN-fc-U5x" firstAttribute="centerX" secondItem="dR7-rR-qTR" secondAttribute="centerX" id="LMv-cF-wRR"/>
-                                            <constraint firstItem="RBY-hy-yPW" firstAttribute="centerX" secondItem="dR7-rR-qTR" secondAttribute="centerX" id="NRU-LQ-7oR"/>
                                             <constraint firstItem="9NS-ND-dqb" firstAttribute="height" secondItem="sh5-n0-hhe" secondAttribute="height" id="OMX-zI-Nqf"/>
                                             <constraint firstItem="sh5-n0-hhe" firstAttribute="height" secondItem="dR7-rR-qTR" secondAttribute="height" multiplier="0.1" id="S6b-Rq-tth"/>
                                             <constraint firstItem="sh5-n0-hhe" firstAttribute="width" secondItem="dR7-rR-qTR" secondAttribute="width" multiplier="0.5" id="WCZ-KN-9aU"/>
@@ -84,6 +83,7 @@
                                             <constraint firstAttribute="trailing" secondItem="Rz9-Cx-urB" secondAttribute="trailing" id="sQ7-PX-IZZ"/>
                                             <constraint firstItem="RBY-hy-yPW" firstAttribute="leading" secondItem="dR7-rR-qTR" secondAttribute="leading" id="sfy-o3-3iI"/>
                                             <constraint firstItem="9NS-ND-dqb" firstAttribute="top" secondItem="dlN-fc-U5x" secondAttribute="bottom" constant="10" id="uLq-42-2MY"/>
+                                            <constraint firstItem="9NS-ND-dqb" firstAttribute="leading" secondItem="sh5-n0-hhe" secondAttribute="trailing" id="vvw-WV-9y5"/>
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="40" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9FS-mc-NMH">
