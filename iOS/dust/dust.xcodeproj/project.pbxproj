@@ -17,6 +17,9 @@
 		A53107132431F758005C95F7 /* dustTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53107122431F758005C95F7 /* dustTests.swift */; };
 		A531072324324BA5005C95F7 /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A531072224324BA5005C95F7 /* SummaryView.swift */; };
 		A531072B2432FB8D005C95F7 /* ChartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A531072A2432FB8D005C95F7 /* ChartTableViewCell.swift */; };
+		A531072D2432FD4E005C95F7 /* ChartTableViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A531072C2432FD4E005C95F7 /* ChartTableViewDatasource.swift */; };
+		A531072F2432FD73005C95F7 /* ChartTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A531072E2432FD73005C95F7 /* ChartTableViewDelegate.swift */; };
+		A531073224331228005C95F7 /* DustInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A531073124331228005C95F7 /* DustInfoModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		A53107142431F758005C95F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A531072224324BA5005C95F7 /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
 		A531072A2432FB8D005C95F7 /* ChartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartTableViewCell.swift; sourceTree = "<group>"; };
+		A531072C2432FD4E005C95F7 /* ChartTableViewDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartTableViewDatasource.swift; sourceTree = "<group>"; };
+		A531072E2432FD73005C95F7 /* ChartTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartTableViewDelegate.swift; sourceTree = "<group>"; };
+		A531073124331228005C95F7 /* DustInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DustInfoModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +91,7 @@
 		A53106F82431F756005C95F7 /* dust */ = {
 			isa = PBXGroup;
 			children = (
+				A531073024331203005C95F7 /* Model */,
 				A531072124324B1C005C95F7 /* View */,
 				A531072024324B10005C95F7 /* ViewController */,
 				A531071F24324B05005C95F7 /* Delegate */,
@@ -136,8 +143,18 @@
 			isa = PBXGroup;
 			children = (
 				A531072A2432FB8D005C95F7 /* ChartTableViewCell.swift */,
+				A531072C2432FD4E005C95F7 /* ChartTableViewDatasource.swift */,
+				A531072E2432FD73005C95F7 /* ChartTableViewDelegate.swift */,
 			);
 			path = ChartTableView;
+			sourceTree = "<group>";
+		};
+		A531073024331203005C95F7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A531073124331228005C95F7 /* DustInfoModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,10 +260,13 @@
 			files = (
 				A531072B2432FB8D005C95F7 /* ChartTableViewCell.swift in Sources */,
 				A53107002431F756005C95F7 /* ForecastViewController.swift in Sources */,
+				A531073224331228005C95F7 /* DustInfoModel.swift in Sources */,
 				A53106FE2431F756005C95F7 /* ChartViewController.swift in Sources */,
+				A531072D2432FD4E005C95F7 /* ChartTableViewDatasource.swift in Sources */,
 				A531072324324BA5005C95F7 /* SummaryView.swift in Sources */,
 				A53106FA2431F756005C95F7 /* AppDelegate.swift in Sources */,
 				A53106FC2431F756005C95F7 /* SceneDelegate.swift in Sources */,
+				A531072F2432FD73005C95F7 /* ChartTableViewDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
