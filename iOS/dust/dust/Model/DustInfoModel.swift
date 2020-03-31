@@ -24,11 +24,14 @@ struct DustInfoModel {
     var numeric: Int
     var percentage: Double
     var grade: Grade
+    var station: String
+    var time: String
     
-    
-    init(numeric: Int) {
+    init(numeric: Int, station: String, time: String) {
         self.numeric = numeric
         self.percentage = (Double(numeric) > 200.0 ? 200.0 : Double(numeric)) / 200
         self.grade = Grade(index: Int(percentage * 100) / (100 / Grade.allCases.count) >= 4 ? 3 : Int(percentage * 100) / (100 / Grade.allCases.count))
+        self.station = station
+        self.time = String(time) + ":00"
     }
 }
