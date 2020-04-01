@@ -17,10 +17,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.time.LocalTime;
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/forecase")
@@ -39,11 +37,16 @@ public class ForecaseController {
     // 예보 문구 출력 호출
     @GetMapping("/informoverall")
     public String getOverallForecase() throws IOException {
-        String today = LocalDate.now().toString();
+        LocalTime currentTime = LocalTime.now();
+        String searchDate;
+
+        // 자세한 시간 구현 필요
+        if (currentTime.getHour() < 17) searchDate = LocalDate.now().minusDays(1).toString();
+        else searchDate = LocalDate.now().toString();
 
         StringBuilder urlBuilder = new StringBuilder("http://openapi.airkorea.or.kr/openapi/services/rest/ArpltnInforInqireSvc/getMinuDustFrcstDspth"); /*URL*/
         urlBuilder.append("?" + URLEncoder.encode("ServiceKey","UTF-8") + "=FwHUBCLVF%2BGTXPUDF9To8ArFacN6La84DaSvEn5dP4Jjw%2BPR9VUd44iYd2ITMu0yO88yseP0akLxoUvsKcHAow%3D%3D"); /*Service Key*/
-        urlBuilder.append("&" + URLEncoder.encode("searchDate","UTF-8") + "=" + URLEncoder.encode("2020-03-30", "UTF-8")); /*한 페이지 결과 수*/
+        urlBuilder.append("&" + URLEncoder.encode("searchDate","UTF-8") + "=" + URLEncoder.encode(searchDate, "UTF-8")); /*한 페이지 결과 수*/
         urlBuilder.append("&" + URLEncoder.encode("informCode","UTF-8") + "=" + URLEncoder.encode("PM10", "UTF-8")); /*페이지 번호*/
         urlBuilder.append("&" + URLEncoder.encode("_returnType","UTF-8") + "=" + URLEncoder.encode("json", "UTF-8")); /*페이지 번호*/
         URL url = new URL(urlBuilder.toString());
@@ -71,8 +74,8 @@ public class ForecaseController {
         CollectionType collectionType = objectMapper.getTypeFactory().constructCollectionType(List.class, ForecaseInformation.class);
         List<ForecaseInformation> forecaseInformationList = objectMapper.readValue(forecaseInformationNode.toString(), collectionType);
 
-        String jsonString = objectMapper.writeValueAsString(forecaseInformationList);
-        return jsonString;
+        String jsonForecaseInformation = objectMapper.writeValueAsString(forecaseInformationList);
+        return jsonForecaseInformation;
     }
 
     // 지역별 등급 표시 요청
