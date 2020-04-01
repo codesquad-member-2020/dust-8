@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  SecondViewController.swift
 //  dust
 //
 //  Created by 신한섭 on 2020/03/30.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class ForecastViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
