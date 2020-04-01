@@ -15,7 +15,7 @@ class ImageManager {
         "http://www.airkorea.or.kr/file/viewImage/?atch_id=138718",
         "http://www.airkorea.or.kr/file/viewImage/?atch_id=138719"
     ]
-    private var count = 0
+    private var received = 0
     
     
     init() {
@@ -27,8 +27,8 @@ class ImageManager {
             OperationQueue().addOperation {
                 NetworkConnection.request(resource: url) {
                     self.images.append(UIImage(data: $0) ?? UIImage())
-                    self.count += 1
-                    if self.count == self.urlString.count {
+                    self.received += 1
+                    if self.received == self.urlString.count {
                         NotificationCenter.default.post(name: .downloadFinished,
                                                         object: nil)
                     }
@@ -39,6 +39,10 @@ class ImageManager {
     
     func index(of index: Int) -> UIImage? {
         return images[index]
+    }
+    
+    func count() -> Int {
+        return self.images.count
     }
 }
 
