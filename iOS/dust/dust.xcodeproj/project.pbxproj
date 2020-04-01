@@ -21,6 +21,7 @@
 		A531072F2432FD73005C95F7 /* ChartTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A531072E2432FD73005C95F7 /* ChartTableViewDelegate.swift */; };
 		A531073224331228005C95F7 /* DustInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A531073124331228005C95F7 /* DustInfoModel.swift */; };
 		A531073424337E55005C95F7 /* DustInfoModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A531073324337E55005C95F7 /* DustInfoModelManager.swift */; };
+		A53BDE1A2434B332006BD7C0 /* PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53BDE192434B332006BD7C0 /* PlayButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		A531072E2432FD73005C95F7 /* ChartTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartTableViewDelegate.swift; sourceTree = "<group>"; };
 		A531073124331228005C95F7 /* DustInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DustInfoModel.swift; sourceTree = "<group>"; };
 		A531073324337E55005C95F7 /* DustInfoModelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DustInfoModelManager.swift; sourceTree = "<group>"; };
+		A53BDE192434B332006BD7C0 /* PlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 				A53107012431F756005C95F7 /* Main.storyboard */,
 				A53107062431F758005C95F7 /* LaunchScreen.storyboard */,
 				A531072224324BA5005C95F7 /* GradationView.swift */,
+				A53BDE192434B332006BD7C0 /* PlayButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 				A531073224331228005C95F7 /* DustInfoModel.swift in Sources */,
 				A53106FE2431F756005C95F7 /* ChartViewController.swift in Sources */,
 				A531072D2432FD4E005C95F7 /* ChartTableViewDatasource.swift in Sources */,
+				A53BDE1A2434B332006BD7C0 /* PlayButton.swift in Sources */,
 				A531072324324BA5005C95F7 /* GradationView.swift in Sources */,
 				A53106FA2431F756005C95F7 /* AppDelegate.swift in Sources */,
 				A531073424337E55005C95F7 /* DustInfoModelManager.swift in Sources */,
