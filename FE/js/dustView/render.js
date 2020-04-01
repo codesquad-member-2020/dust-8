@@ -1,7 +1,7 @@
 import { GRADE, gradeList, currentHours } from "../common/constants.js";
 
-const initRender = data => {
-  const wholeTag = tabBarTag() + dustTag(data);
+const initRender = () => {
+  const wholeTag = tabBarTag() + dustTag();
 
   document.body.innerHTML = wholeTag;
 };
@@ -14,12 +14,12 @@ const tabBarTag = () => {
   </div>`;
 };
 
-const dustTag = data => {
+const dustTag = () => {
   return `
   <div id="dust" class="tab-container dust">
     <div class="info-window">
       <h2>미세먼지 웹</h2>
-      ${dustInfoTag(data, GRADE[gradeList[0]], 20)}
+      ${dustInfoTag(GRADE[gradeList[0]], 20)}
     </div>
     <div class="dust-charts">
       <div class="chart chart--dev">
@@ -37,7 +37,7 @@ const dustTag = data => {
   `;
 };
 
-const dustInfoTag = (data, gradeProp, numeric) => {
+const dustInfoTag = (gradeProp, numeric) => {
   const { EMOJI, STATE } = gradeProp;
 
   return `
@@ -47,7 +47,7 @@ const dustInfoTag = (data, gradeProp, numeric) => {
     <span class="statistics-numeric">${numeric}</span>
     <span class="statistics-time">${currentHours}</span>
   </div>
-  <p><i>${data.stationName}</i>측정소 기준</p>
+  <p><i class="info-location"></i>측정소 기준</p>
   `;
 };
 

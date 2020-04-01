@@ -1,3 +1,5 @@
-import { fetchLocation } from "./getLocation.js";
+import { fetchLocation } from "./model/getLocation.js";
+import { initRender } from "./dustView/render.js";
 
+initRender();
 fetchLocation();
