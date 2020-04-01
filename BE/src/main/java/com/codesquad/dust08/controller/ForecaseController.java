@@ -1,11 +1,14 @@
 package com.codesquad.dust08.controller;
 
 import com.codesquad.dust08.data.ForecaseInformation;
+import com.codesquad.dust08.data.ResponseResult;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,11 +21,13 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
 @RequestMapping("/forecase")
 public class ForecaseController {
+
     private static final Logger log = LoggerFactory.getLogger(ForecaseController.class);
     // 24시간 대기오염 이미지 호출
     @GetMapping("/images")
@@ -36,7 +41,7 @@ public class ForecaseController {
 
     // 예보 문구 출력 호출
     @GetMapping("/informoverall")
-    public String getOverallForecase() throws IOException {
+    public ResponseEntity getOverallForecase() throws IOException {
         LocalTime currentTime = LocalTime.now();
         String searchDate;
 
@@ -71,11 +76,14 @@ public class ForecaseController {
         ObjectMapper objectMapper = new ObjectMapper();
 
         JsonNode forecaseInformationNode = objectMapper.readTree(sb.toString()).path("list");
-        CollectionType collectionType = objectMapper.getTypeFactory().constructCollectionType(List.class, ForecaseInformation.class);
+        CollectionType collectionType = objectMapper.getTypeFactory().constructCollectionType(ArrayList.class, ForecaseInformation.class);
         List<ForecaseInformation> forecaseInformationList = objectMapper.readValue(forecaseInformationNode.toString(), collectionType);
 
-        String jsonForecaseInformation = objectMapper.writeValueAsString(forecaseInformationList);
-        return jsonForecaseInformation;
+        String jsonForecaseInformation = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(forecaseInformationList);
+        System.out.println(jsonForecaseInformation);
+
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(new ResponseResult(forecaseInformationList));
     }
 
     // 지역별 등급 표시 요청
