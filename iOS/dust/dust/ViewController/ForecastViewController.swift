@@ -10,8 +10,15 @@ import UIKit
 
 class ForecastViewController: UIViewController {
 
+    @IBOutlet weak var playButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupImageButtonBorder()
+    }
+    
+    private func setupImageButtonBorder() {
+        playButton.layer.borderWidth = 1
+        playButton.layer.borderColor = UIColor.black.cgColor
     }
 }
 
