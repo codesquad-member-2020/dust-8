@@ -177,7 +177,7 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EOD-yu-Lm9" userLabel="예보 이미지">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EOD-yu-Lm9" userLabel="예보 이미지">
                                 <rect key="frame" x="10" y="135" width="355" height="355"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="EOD-yu-Lm9" secondAttribute="height" multiplier="1:1" id="A18-7K-NrH"/>
