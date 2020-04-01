@@ -1,8 +1,11 @@
 const getFetchUrl = (url, data) => {
   const esc = encodeURIComponent;
-  const query = Object.keys(data)
-    .map(k => `${esc(k)}=${esc(data[k])}`)
-    .join("&");
+  const query =
+    typeof data === "object"
+      ? Object.keys(data)
+          .map(k => `${esc(k)}=${esc(data[k])}`)
+          .join("&")
+      : esc(data);
   const fetchUrl = url.includes("?") ? [url, query].join("") : [url, query].join("?");
   return fetchUrl;
 };
@@ -13,7 +16,7 @@ const fetchRequest = (url, data) => {
   return fetch(fetchUrl, { method: "GET" })
     .then(response => response.json())
     .then(stationData => {
-      return stationData.stationName;
+      return stationData;
     })
     .catch(error => console.error(error));
 };
