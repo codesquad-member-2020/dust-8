@@ -11,6 +11,7 @@ import UIKit
 class ForecastViewController: UIViewController {
     
     private let imageManager = ImageManager()
+    private let operationQueue = OperationQueue()
     
     @IBOutlet weak var forecastImageVIew: UIImageView!
     @IBOutlet weak var slider: UISlider!
@@ -27,6 +28,10 @@ class ForecastViewController: UIViewController {
                                                selector: #selector(downloadFinished),
                                                name: .downloadFinished,
                                                object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(play(_:)),
+                                               name: .playButtonPushed,
+                                               object: nil)
     }
     
     @objc func downloadFinished() {
@@ -34,6 +39,21 @@ class ForecastViewController: UIViewController {
             self.forecastImageVIew.image = self.imageManager.index(of: 0)
             self.slider.setupSlider(min: 0, max: Float(self.imageManager.count() - 1))
         }
+    }
+    
+    @objc func play(_ notification: Notification) {
+        guard let flag: Bool = notification.userInfo?["buttonFlag"] as? Bool else {return}
+        if flag {
+            operationQueue.cancelAllOperations()
+        } else {
+            let operation = ImageOperation(slider: slider, imageView: forecastImageVIew, imageManager: imageManager)
+            operationQueue.addOperation(operation)
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        operationQueue.cancelAllOperations()
     }
 }
 
