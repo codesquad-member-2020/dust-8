@@ -22,6 +22,7 @@
 		A531073224331228005C95F7 /* DustInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A531073124331228005C95F7 /* DustInfoModel.swift */; };
 		A531073424337E55005C95F7 /* DustInfoModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A531073324337E55005C95F7 /* DustInfoModelManager.swift */; };
 		A53BDE1A2434B332006BD7C0 /* PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53BDE192434B332006BD7C0 /* PlayButton.swift */; };
+		A53BDE202434C6E0006BD7C0 /* NetworkConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53BDE1F2434C6E0006BD7C0 /* NetworkConnection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		A531073124331228005C95F7 /* DustInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DustInfoModel.swift; sourceTree = "<group>"; };
 		A531073324337E55005C95F7 /* DustInfoModelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DustInfoModelManager.swift; sourceTree = "<group>"; };
 		A53BDE192434B332006BD7C0 /* PlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayButton.swift; sourceTree = "<group>"; };
+		A53BDE1F2434C6E0006BD7C0 /* NetworkConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConnection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 			children = (
 				A531073124331228005C95F7 /* DustInfoModel.swift */,
 				A531073324337E55005C95F7 /* DustInfoModelManager.swift */,
+				A53BDE1F2434C6E0006BD7C0 /* NetworkConnection.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				A53BDE1A2434B332006BD7C0 /* PlayButton.swift in Sources */,
 				A531072324324BA5005C95F7 /* GradationView.swift in Sources */,
 				A53106FA2431F756005C95F7 /* AppDelegate.swift in Sources */,
+				A53BDE202434C6E0006BD7C0 /* NetworkConnection.swift in Sources */,
 				A531073424337E55005C95F7 /* DustInfoModelManager.swift in Sources */,
 				A53106FC2431F756005C95F7 /* SceneDelegate.swift in Sources */,
 				A531072F2432FD73005C95F7 /* ChartTableViewDelegate.swift in Sources */,
