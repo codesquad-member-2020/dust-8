@@ -211,6 +211,9 @@
                                     <action selector="sliderChanged:" destination="8rJ-Kc-sve" eventType="valueChanged" id="u0v-aU-0SN"/>
                                 </connections>
                             </slider>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="LmH-OB-HHK">
+                                <rect key="frame" x="169" y="294" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -229,10 +232,12 @@
                             <constraint firstAttribute="trailing" secondItem="9cb-jr-YkS" secondAttribute="trailing" id="Y2d-Ri-aL2"/>
                             <constraint firstItem="xkH-L1-OIc" firstAttribute="top" secondItem="EOD-yu-Lm9" secondAttribute="bottom" constant="10" id="ZMs-3x-NE6"/>
                             <constraint firstItem="iWS-Qo-Jhb" firstAttribute="trailing" secondItem="EOD-yu-Lm9" secondAttribute="trailing" id="dFH-93-TRQ"/>
+                            <constraint firstItem="LmH-OB-HHK" firstAttribute="centerY" secondItem="EOD-yu-Lm9" secondAttribute="centerY" id="glh-dP-k9Q"/>
                             <constraint firstItem="9cb-jr-YkS" firstAttribute="height" secondItem="QS5-Rx-YEW" secondAttribute="height" multiplier="0.15 / 2" id="h7i-hy-Zla"/>
                             <constraint firstItem="xkH-L1-OIc" firstAttribute="height" secondItem="QS5-Rx-YEW" secondAttribute="height" multiplier="0.07" id="jiH-wM-zMY"/>
                             <constraint firstItem="9cb-jr-YkS" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="20" id="mgw-59-WdZ"/>
                             <constraint firstItem="wr0-JK-qhJ" firstAttribute="top" secondItem="xkH-L1-OIc" secondAttribute="bottom" constant="10" id="prB-Lu-8by"/>
+                            <constraint firstItem="LmH-OB-HHK" firstAttribute="centerX" secondItem="EOD-yu-Lm9" secondAttribute="centerX" id="qPg-T2-xkB"/>
                             <constraint firstItem="iWS-Qo-Jhb" firstAttribute="leading" secondItem="9bz-cR-PaJ" secondAttribute="trailing" constant="10" id="wFx-mS-xRB"/>
                             <constraint firstItem="9bz-cR-PaJ" firstAttribute="top" secondItem="wr0-JK-qhJ" secondAttribute="bottom" constant="10" id="xwA-s7-373"/>
                             <constraint firstItem="xkH-L1-OIc" firstAttribute="leading" secondItem="EOD-yu-Lm9" secondAttribute="leading" id="yYQ-je-Okd"/>
@@ -241,6 +246,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="예보" image="clock.fill" catalog="system" id="cPa-gy-q4n"/>
                     <connections>
+                        <outlet property="acitivityIndicator" destination="LmH-OB-HHK" id="3Py-Gd-gc0"/>
                         <outlet property="forecastImageVIew" destination="EOD-yu-Lm9" id="gq2-qI-1vg"/>
                         <outlet property="slider" destination="iWS-Qo-Jhb" id="fpV-ZP-geQ"/>
                     </connections>
