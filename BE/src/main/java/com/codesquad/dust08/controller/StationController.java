@@ -34,6 +34,11 @@ public class StationController {
     // 특정 측정소의 최근 측정된 미세먼지 등급 반환
     @GetMapping("/dust-status")
     public ResponseEntity getGrade(String stationName) throws IOException {
+        if (stationName == null) {
+            log.debug("is empty!!!!!!");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body(new ResponseResult(false, "잚못된 요청입니다."));
+        }
         final String SERVICE_KEY = "6aRmxVKhQasLEppxZRQirEm2LIgzObFzmhH4sg1veRb3trWgiOU58lfEQqUHcYMucI398cs2Vd8S2Ygz9pS9Zw%3D%3D";
         log.debug("stationName : {}", stationName);
         StringBuilder urlBuilder = new StringBuilder("http://openapi.airkorea.or.kr/openapi/services/rest/ArpltnInforInqireSvc/getMsrstnAcctoRltmMesureDnsty"); //URL
