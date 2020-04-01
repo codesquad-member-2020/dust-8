@@ -24,6 +24,7 @@
 		A53BDE1A2434B332006BD7C0 /* PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53BDE192434B332006BD7C0 /* PlayButton.swift */; };
 		A53BDE202434C6E0006BD7C0 /* NetworkConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53BDE1F2434C6E0006BD7C0 /* NetworkConnection.swift */; };
 		A53BDE222434C76A006BD7C0 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53BDE212434C76A006BD7C0 /* ImageManager.swift */; };
+		A53BDE2424351AD6006BD7C0 /* ImageOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53BDE2324351AD6006BD7C0 /* ImageOperation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		A53BDE192434B332006BD7C0 /* PlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayButton.swift; sourceTree = "<group>"; };
 		A53BDE1F2434C6E0006BD7C0 /* NetworkConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConnection.swift; sourceTree = "<group>"; };
 		A53BDE212434C76A006BD7C0 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		A53BDE2324351AD6006BD7C0 /* ImageOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageOperation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 				A53107062431F758005C95F7 /* LaunchScreen.storyboard */,
 				A531072224324BA5005C95F7 /* GradationView.swift */,
 				A53BDE192434B332006BD7C0 /* PlayButton.swift */,
+				A53BDE2324351AD6006BD7C0 /* ImageOperation.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A531072B2432FB8D005C95F7 /* ChartTableViewCell.swift in Sources */,
+				A53BDE2424351AD6006BD7C0 /* ImageOperation.swift in Sources */,
 				A53107002431F756005C95F7 /* ForecastViewController.swift in Sources */,
 				A531073224331228005C95F7 /* DustInfoModel.swift in Sources */,
 				A53106FE2431F756005C95F7 /* ChartViewController.swift in Sources */,

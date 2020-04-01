@@ -42,6 +42,14 @@ class PlayButton: UIButton {
             self.setImage(UIImage(systemName: "pause.fill"), for: .normal)
         }
         
+        NotificationCenter.default.post(name: .playButtonPushed,
+                                        object: nil,
+                                        userInfo: ["buttonFlag": playFlag])
+        
         playFlag = !playFlag
     }
+}
+
+extension Notification.Name {
+    static let playButtonPushed = Notification.Name("playButtonPushed")
 }
