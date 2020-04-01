@@ -195,7 +195,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9bz-cR-PaJ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9bz-cR-PaJ" customClass="PlayButton" customModule="dust" customModuleProvider="target">
                                 <rect key="frame" x="10" y="633.66666666666663" width="57" height="56.666666666666629"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="9bz-cR-PaJ" secondAttribute="height" multiplier="1:1" id="97Z-aY-Fa0"/>
