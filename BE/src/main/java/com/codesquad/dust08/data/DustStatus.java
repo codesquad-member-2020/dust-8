@@ -1,4 +1,4 @@
-package com.codesquad.dust08.dust;
+package com.codesquad.dust08.data;
 
 public class DustStatus {
     private String dataTime;

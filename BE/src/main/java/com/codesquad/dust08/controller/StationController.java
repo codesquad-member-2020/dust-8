@@ -1,10 +1,13 @@
 package com.codesquad.dust08.controller;
 
-import com.codesquad.dust08.dust.DustStatus;
+import com.codesquad.dust08.data.DustStatus;
+import com.codesquad.dust08.data.ResponseResult;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,7 +33,7 @@ public class StationController {
 
     // 특정 측정소의 최근 측정된 미세먼지 등급 반환
     @GetMapping("/dust-status")
-    public List<DustStatus> getGrade(String stationName) throws IOException {
+    public ResponseEntity getGrade(String stationName) throws IOException {
         final String SERVICE_KEY = "6aRmxVKhQasLEppxZRQirEm2LIgzObFzmhH4sg1veRb3trWgiOU58lfEQqUHcYMucI398cs2Vd8S2Ygz9pS9Zw%3D%3D";
         log.debug("stationName : {}", stationName);
         StringBuilder urlBuilder = new StringBuilder("http://openapi.airkorea.or.kr/openapi/services/rest/ArpltnInforInqireSvc/getMsrstnAcctoRltmMesureDnsty"); //URL
@@ -76,6 +79,7 @@ public class StationController {
             dustStatusList.add(dustStatus);
         }
 
-        return dustStatusList;
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(new ResponseResult(dustStatusList));
     }
 }
