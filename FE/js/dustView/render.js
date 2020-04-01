@@ -24,11 +24,7 @@ const dustTag = () => {
     <div class="dust-charts">
       <div class="chart chart--dev">
         <ul class="chart--horiz">
-          <li class="chart__bar" style="width: 98%;">
-            <span class="chart__label">
-              196
-            </span>
-          </li>
+
 
         </ul>
       </div>
