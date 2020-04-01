@@ -1,19 +1,25 @@
 package com.codesquad.dust08.controller;
 
+import com.codesquad.dust08.data.DustStatus;
+import com.codesquad.dust08.data.ResponseResult;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 @RequestMapping("/stations")
@@ -27,7 +33,12 @@ public class StationController {
 
     // 특정 측정소의 최근 측정된 미세먼지 등급 반환
     @GetMapping("/dust-status")
-    public String getGrade(String stationName) throws IOException {
+    public ResponseEntity getGrade(String stationName) throws IOException {
+        if (stationName == null) {
+            log.debug("is empty!!!!!!");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body(new ResponseResult(false, "잚못된 요청입니다."));
+        }
         final String SERVICE_KEY = "6aRmxVKhQasLEppxZRQirEm2LIgzObFzmhH4sg1veRb3trWgiOU58lfEQqUHcYMucI398cs2Vd8S2Ygz9pS9Zw%3D%3D";
         log.debug("stationName : {}", stationName);
         StringBuilder urlBuilder = new StringBuilder("http://openapi.airkorea.or.kr/openapi/services/rest/ArpltnInforInqireSvc/getMsrstnAcctoRltmMesureDnsty"); //URL
@@ -39,6 +50,7 @@ public class StationController {
         URL url = new URL(urlBuilder.toString());
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
         conn.setRequestMethod("GET");
+        conn.setRequestProperty("Content-type", "application/json");
 
         int responseCode = conn.getResponseCode();
         log.debug("Response code : {}", responseCode);
@@ -57,28 +69,22 @@ public class StationController {
 
         br.close();
         conn.disconnect();
-        log.debug("Response : {}", sb.toString());
+        String responseString = sb.toString();
+        log.debug("Response : {}", responseString);
 
-        return "{\n" +
-                "\t\"dustStatus\": [{\n" +
-                "\t\t\t\"dataTime\": \"2020-03-30 18:00\",\n" +
-                "\t\t\t\"pm10Value\": \"10\",\n" +
-                "\t\t\t\"pm10Grade1h\": \"1\"\n" +
-                "\t\t},\n" +
-                "\t\t{\n" +
-                "\t\t\t\"dataTime\": \"2020-03-30 17:00\",\n" +
-                "\t\t\t\"pm10Value\": \"20\",\n" +
-                "\t\t\t\"pm10Grade1h\": \"1\"\n" +
-                "\t\t},\n" +
-                "\t\t{\n" +
-                "\t\t\t\"dataTime\": \"2020-03-30 16:00\",\n" +
-                "\t\t\t\"pm10Value\": \"30\",\n" +
-                "\t\t\t\"pm10Grade1h\": \"1\"\n" +
-                "\t\t},\n" +
-                "\t\t{\n" +
-                "\t\t\t\"dataTime\": \"2020-03-30 15:00\",\n" +
-                "\t\t\t\"pm10Value\": \"40\",\n" +
-                "\t\t\t\"pm10Grade1h\": \"2\"\n" +
-                "\t\t}]}";
+        ObjectMapper mapper = new ObjectMapper();
+        List<DustStatus> dustStatusList = new ArrayList<>();
+        JsonNode jsonNode = mapper.readTree(responseString);
+        for (JsonNode list : jsonNode.get("list")) {
+            log.debug("list : {}", list);
+            DustStatus dustStatus = new DustStatus();
+            dustStatus.setDataTime(list.get("dataTime").asText());
+            dustStatus.setPm10Value(list.get("pm10Value").asInt());
+            dustStatus.setPm10Grade1h(list.get("pm10Grade1h").asInt());
+            dustStatusList.add(dustStatus);
+        }
+
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(new ResponseResult(dustStatusList));
     }
 }
