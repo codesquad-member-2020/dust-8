@@ -21,6 +21,26 @@ public class StationController {
     @GetMapping("/dust-status")
     public String getGrade(String stationName) {
 
-        return "{ \"pm10Value\": \"68\", \"pm10Grade1h\": \"2\", \"dataTime\": \"2020-03-31 09:00\" }";
+        return "{\n" +
+                "\t\"dustStatus\": [{\n" +
+                "\t\t\t\"dataTime\": \"2020-03-30 18:00\",\n" +
+                "\t\t\t\"pm10Value\": \"10\",\n" +
+                "\t\t\t\"pm10Grade1h\": \"1\"\n" +
+                "\t\t},\n" +
+                "\t\t{\n" +
+                "\t\t\t\"dataTime\": \"2020-03-30 17:00\",\n" +
+                "\t\t\t\"pm10Value\": \"20\",\n" +
+                "\t\t\t\"pm10Grade1h\": \"1\"\n" +
+                "\t\t},\n" +
+                "\t\t{\n" +
+                "\t\t\t\"dataTime\": \"2020-03-30 16:00\",\n" +
+                "\t\t\t\"pm10Value\": \"30\",\n" +
+                "\t\t\t\"pm10Grade1h\": \"1\"\n" +
+                "\t\t},\n" +
+                "\t\t{\n" +
+                "\t\t\t\"dataTime\": \"2020-03-30 15:00\",\n" +
+                "\t\t\t\"pm10Value\": \"40\",\n" +
+                "\t\t\t\"pm10Grade1h\": \"2\"\n" +
+                "\t\t}]}";
     }
 }
