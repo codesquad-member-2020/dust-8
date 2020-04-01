@@ -207,6 +207,9 @@
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="iWS-Qo-Jhb">
                                 <rect key="frame" x="75" y="647" width="292" height="31"/>
+                                <connections>
+                                    <action selector="sliderChanged:" destination="8rJ-Kc-sve" eventType="valueChanged" id="u0v-aU-0SN"/>
+                                </connections>
                             </slider>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -239,7 +242,7 @@
                     <tabBarItem key="tabBarItem" title="예보" image="clock.fill" catalog="system" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="forecastImageVIew" destination="EOD-yu-Lm9" id="gq2-qI-1vg"/>
-                        <outlet property="playButton" destination="9bz-cR-PaJ" id="j5P-xE-OqC"/>
+                        <outlet property="slider" destination="iWS-Qo-Jhb" id="fpV-ZP-geQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
