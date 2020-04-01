@@ -13,6 +13,7 @@ class ForecastViewController: UIViewController {
     private let imageManager = ImageManager()
     private let operationQueue = OperationQueue()
     
+    @IBOutlet weak var playButton: PlayButton!
     @IBOutlet weak var acitivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var forecastImageVIew: UIImageView!
     @IBOutlet weak var slider: UISlider!
@@ -40,6 +41,8 @@ class ForecastViewController: UIViewController {
             self.forecastImageVIew.image = self.imageManager.index(of: 0)
             self.slider.setupSlider(min: 0, max: Float(self.imageManager.count() - 1))
             self.acitivityIndicator.stopAnimating()
+            self.slider.isEnabled = true
+            self.playButton.isEnabled = true
         }
     }
     

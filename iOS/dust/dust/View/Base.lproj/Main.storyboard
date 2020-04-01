@@ -195,7 +195,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9bz-cR-PaJ" customClass="PlayButton" customModule="dust" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9bz-cR-PaJ" customClass="PlayButton" customModule="dust" customModuleProvider="target">
                                 <rect key="frame" x="10" y="633.66666666666663" width="57" height="56.666666666666629"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="9bz-cR-PaJ" secondAttribute="height" multiplier="1:1" id="97Z-aY-Fa0"/>
@@ -205,7 +205,7 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40" scale="default"/>
                                 </state>
                             </button>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="iWS-Qo-Jhb">
+                            <slider opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="iWS-Qo-Jhb">
                                 <rect key="frame" x="75" y="647" width="292" height="31"/>
                                 <connections>
                                     <action selector="sliderChanged:" destination="8rJ-Kc-sve" eventType="valueChanged" id="u0v-aU-0SN"/>
@@ -248,6 +248,7 @@
                     <connections>
                         <outlet property="acitivityIndicator" destination="LmH-OB-HHK" id="3Py-Gd-gc0"/>
                         <outlet property="forecastImageVIew" destination="EOD-yu-Lm9" id="gq2-qI-1vg"/>
+                        <outlet property="playButton" destination="9bz-cR-PaJ" id="mWT-c1-nNq"/>
                         <outlet property="slider" destination="iWS-Qo-Jhb" id="fpV-ZP-geQ"/>
                     </connections>
                 </viewController>
