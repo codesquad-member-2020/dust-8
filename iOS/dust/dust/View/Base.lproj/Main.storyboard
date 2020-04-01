@@ -208,9 +208,6 @@
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="iWS-Qo-Jhb">
                                 <rect key="frame" x="75" y="647" width="292" height="31"/>
                             </slider>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="jEc-ve-vhs">
-                                <rect key="frame" x="169" y="294" width="37" height="37"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -221,7 +218,6 @@
                             <constraint firstItem="wr0-JK-qhJ" firstAttribute="leading" secondItem="xkH-L1-OIc" secondAttribute="leading" id="Cey-P5-Vn9"/>
                             <constraint firstItem="xkH-L1-OIc" firstAttribute="trailing" secondItem="EOD-yu-Lm9" secondAttribute="trailing" id="GIy-Ke-3iq"/>
                             <constraint firstItem="wr0-JK-qhJ" firstAttribute="trailing" secondItem="xkH-L1-OIc" secondAttribute="trailing" id="Gqi-Av-9zw"/>
-                            <constraint firstItem="jEc-ve-vhs" firstAttribute="centerY" secondItem="EOD-yu-Lm9" secondAttribute="centerY" id="HbJ-iD-gVH"/>
                             <constraint firstItem="EOD-yu-Lm9" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="10" id="Lyd-GT-wKc"/>
                             <constraint firstItem="EOD-yu-Lm9" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="M1B-C5-Jcl"/>
                             <constraint firstItem="wr0-JK-qhJ" firstAttribute="height" secondItem="xkH-L1-OIc" secondAttribute="height" id="NcO-vJ-sL4"/>
@@ -229,7 +225,6 @@
                             <constraint firstItem="9cb-jr-YkS" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="WuQ-RX-1Ar"/>
                             <constraint firstAttribute="trailing" secondItem="9cb-jr-YkS" secondAttribute="trailing" id="Y2d-Ri-aL2"/>
                             <constraint firstItem="xkH-L1-OIc" firstAttribute="top" secondItem="EOD-yu-Lm9" secondAttribute="bottom" constant="10" id="ZMs-3x-NE6"/>
-                            <constraint firstItem="jEc-ve-vhs" firstAttribute="centerX" secondItem="EOD-yu-Lm9" secondAttribute="centerX" id="aIa-mS-G8x"/>
                             <constraint firstItem="iWS-Qo-Jhb" firstAttribute="trailing" secondItem="EOD-yu-Lm9" secondAttribute="trailing" id="dFH-93-TRQ"/>
                             <constraint firstItem="9cb-jr-YkS" firstAttribute="height" secondItem="QS5-Rx-YEW" secondAttribute="height" multiplier="0.15 / 2" id="h7i-hy-Zla"/>
                             <constraint firstItem="xkH-L1-OIc" firstAttribute="height" secondItem="QS5-Rx-YEW" secondAttribute="height" multiplier="0.07" id="jiH-wM-zMY"/>
@@ -243,6 +238,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="예보" image="clock.fill" catalog="system" id="cPa-gy-q4n"/>
                     <connections>
+                        <outlet property="forecastImageVIew" destination="EOD-yu-Lm9" id="gq2-qI-1vg"/>
                         <outlet property="playButton" destination="9bz-cR-PaJ" id="j5P-xE-OqC"/>
                     </connections>
                 </viewController>
