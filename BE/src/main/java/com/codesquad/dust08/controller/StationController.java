@@ -21,6 +21,10 @@ import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.codesquad.dust08.constants.CommonConstants.ENCODING_TYPE;
+import static com.codesquad.dust08.constants.CommonConstants.SERVICE_KEY;
+import static com.codesquad.dust08.constants.UrlConstants.STATION_DUST_STATUS;
+
 @RestController
 @RequestMapping("/stations")
 public class StationController {
@@ -35,18 +39,17 @@ public class StationController {
     @GetMapping("/dust-status")
     public ResponseEntity getGrade(String stationName) throws IOException {
         if (stationName == null) {
-            log.debug("is empty!!!!!!");
+            log.debug("[*]=====> stationName is empty");
             return ResponseEntity.status(HttpStatus.BAD_REQUEST)
                     .body(new ResponseResult(false, "잚못된 요청입니다."));
         }
-        final String SERVICE_KEY = "6aRmxVKhQasLEppxZRQirEm2LIgzObFzmhH4sg1veRb3trWgiOU58lfEQqUHcYMucI398cs2Vd8S2Ygz9pS9Zw%3D%3D";
         log.debug("stationName : {}", stationName);
-        StringBuilder urlBuilder = new StringBuilder("http://openapi.airkorea.or.kr/openapi/services/rest/ArpltnInforInqireSvc/getMsrstnAcctoRltmMesureDnsty"); //URL
-        urlBuilder.append("?" + URLEncoder.encode("ServiceKey", "UTF-8") + "=" + SERVICE_KEY); //ServiceKey
-        urlBuilder.append("&" + URLEncoder.encode("stationName", "UTF-8") + "=" + stationName); //측정소
-        urlBuilder.append("&" + URLEncoder.encode("dataTerm", "UTF-8") + "=" + URLEncoder.encode("DAILY", "UTF-8")); //하루치 데이터
-        urlBuilder.append("&" + URLEncoder.encode("numOfRows", "UTF-8") + "=" + URLEncoder.encode("24", "UTF-8")); //24개 데이터
-        urlBuilder.append("&" + URLEncoder.encode("_returnType","UTF-8") + "=" + URLEncoder.encode("JSON", "UTF-8"));
+        StringBuilder urlBuilder = new StringBuilder(STATION_DUST_STATUS); //URL
+        urlBuilder.append("?" + URLEncoder.encode("ServiceKey", ENCODING_TYPE) + "=" + SERVICE_KEY); //ServiceKey
+        urlBuilder.append("&" + URLEncoder.encode("stationName", ENCODING_TYPE) + "=" + stationName); //측정소
+        urlBuilder.append("&" + URLEncoder.encode("dataTerm", ENCODING_TYPE) + "=" + URLEncoder.encode("DAILY", ENCODING_TYPE)); //하루치 데이터
+        urlBuilder.append("&" + URLEncoder.encode("numOfRows", ENCODING_TYPE) + "=" + URLEncoder.encode("24", ENCODING_TYPE)); //24개 데이터
+        urlBuilder.append("&" + URLEncoder.encode("_returnType",ENCODING_TYPE) + "=" + URLEncoder.encode("JSON", ENCODING_TYPE));
         URL url = new URL(urlBuilder.toString());
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
         conn.setRequestMethod("GET");
