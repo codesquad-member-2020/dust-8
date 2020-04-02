@@ -23,6 +23,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/forecase")
@@ -52,16 +53,22 @@ public class ForecaseController {
         if (currentTime.getHour() < 17) searchDate = LocalDate.now().minusDays(1).toString();
         else searchDate = LocalDate.now().toString();
 
+
         String jsonForecaseData = collectJsonForecaseDataFromOpenApi(searchDate);
 
         ObjectMapper objectMapper = new ObjectMapper();
         JsonNode forecaseInformationNode = objectMapper.readTree(jsonForecaseData).path("list");
+        log.debug("Node : {}", forecaseInformationNode);
+
         CollectionType collectionType = objectMapper.getTypeFactory().constructCollectionType(ArrayList.class, ForecaseInformation.class);
         List<ForecaseInformation> forecaseInformationList = objectMapper.readValue(forecaseInformationNode.toString(), collectionType);
-        log.debug("JSON DATA : {}", forecaseInformationList);
+
+        ForecaseInformation recentForecaseData = forecaseInformationList.get(0);
+
+        log.debug("JSON DATA : {}", recentForecaseData);
 
         return ResponseEntity.status(HttpStatus.OK)
-                .body(new ResponseResult(forecaseInformationList));
+                .body(new ResponseResult(recentForecaseData));
     }
 
     // 지역별 등급 표시 요청

@@ -3,91 +3,62 @@ package com.codesquad.dust08.data;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ForecaseInformation {
 
-    @JsonProperty("dataTime")
-    private String announceDateTime;
+    private String gradeOfCities;
 
-    @JsonProperty("imageUrl1")
-    private String firstImage;
+    private String forecaseContent;
 
-    @JsonProperty("imageUrl2")
-    private String secondImage;
+    private String imageUrl1;
 
-    @JsonProperty("imageUrl3")
-    private String thirdImage;
+    private String imageUrl2;
 
-    private String informCode;
+    private String imageUrl3;
 
-    private String informGrade;
+    private List<String> images;
 
-    private String informOverall;
-
-    @JsonProperty("informData")
-    private String forecaseDate;
-
-    public String getAnnounceDateTime() {
-        return announceDateTime;
+    @JsonProperty("gradeOfCities")
+    public String getGradeOfCities() {
+        return gradeOfCities;
     }
 
-    public void setAnnounceDateTime(String announceDateTime) {
-        this.announceDateTime = announceDateTime;
+    @JsonProperty("informGrade")
+    public void setGradeOfCities(String informGrade) {
+        this.gradeOfCities = informGrade;
     }
 
-    public String getFirstImage() {
-        return firstImage;
+    @JsonProperty("forecaseContent")
+    public String getForecaseContent() {
+        return forecaseContent;
     }
 
-    public void setFirstImage(String firstImage) {
-        this.firstImage = firstImage;
+    @JsonProperty("informOverall")
+    public void setForecaseContent(String informOverall) {
+        this.forecaseContent = informOverall;
     }
 
-    public String getSecondImage() {
-        return secondImage;
+    public void setImageUrl1(String imageUrl1) {
+        this.imageUrl1 = imageUrl1;
     }
 
-    public void setSecondImage(String secondImage) {
-        this.secondImage = secondImage;
+    public void setImageUrl2(String imageUrl2) {
+        this.imageUrl2 = imageUrl2;
     }
 
-    public String getThirdImage() {
-        return thirdImage;
+    public void setImageUrl3(String imageUrl3) {
+        this.imageUrl3 = imageUrl3;
     }
 
-    public void setThirdImage(String thirdImage) {
-        this.thirdImage = thirdImage;
-    }
+    public List<String> getImages() {
+        images = new ArrayList<>();
+        images.add(imageUrl1);
+        images.add(imageUrl2);
+        images.add(imageUrl3);
 
-    public String getInformCode() {
-        return informCode;
-    }
-
-    public void setInformCode(String informCode) {
-        this.informCode = informCode;
-    }
-
-    public String getInformGrade() {
-        return informGrade;
-    }
-
-    public void setInformGrade(String informGrade) {
-        this.informGrade = informGrade;
-    }
-
-    public String getInformOverall() {
-        return informOverall;
-    }
-
-    public void setInformOverall(String informOverall) {
-        this.informOverall = informOverall;
-    }
-
-    public String getForecaseDate() {
-        return forecaseDate;
-    }
-
-    public void setForecaseDate(String forecaseDate) {
-        this.forecaseDate = forecaseDate;
+        return images;
     }
 }
