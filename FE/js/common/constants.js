@@ -7,4 +7,9 @@ export const GRADE = {
 
 export const gradeList = ["GOOD", "ORDINARY", "BAD", "VERY_BAD"];
 
+export const tabValue = {
+  "tab-dust": "#dust",
+  "tab-forecast": "#forecast"
+};
+
 export const currentHours = new Date().getHours();
