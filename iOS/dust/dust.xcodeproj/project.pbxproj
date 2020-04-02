@@ -25,6 +25,7 @@
 		A53BDE202434C6E0006BD7C0 /* NetworkConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53BDE1F2434C6E0006BD7C0 /* NetworkConnection.swift */; };
 		A53BDE222434C76A006BD7C0 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53BDE212434C76A006BD7C0 /* ImageManager.swift */; };
 		A53BDE2424351AD6006BD7C0 /* ImageOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53BDE2324351AD6006BD7C0 /* ImageOperation.swift */; };
+		A53BDE592435DB12006BD7C0 /* LocationManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53BDE582435DB12006BD7C0 /* LocationManagerDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		A53BDE1F2434C6E0006BD7C0 /* NetworkConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConnection.swift; sourceTree = "<group>"; };
 		A53BDE212434C76A006BD7C0 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		A53BDE2324351AD6006BD7C0 /* ImageOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageOperation.swift; sourceTree = "<group>"; };
+		A53BDE582435DB12006BD7C0 /* LocationManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		A53106F82431F756005C95F7 /* dust */ = {
 			isa = PBXGroup;
 			children = (
+				A53BDE572435DAD9006BD7C0 /* Controller */,
 				A531073024331203005C95F7 /* Model */,
 				A531072124324B1C005C95F7 /* View */,
 				A531072024324B10005C95F7 /* ViewController */,
@@ -170,6 +173,14 @@
 				A53BDE212434C76A006BD7C0 /* ImageManager.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		A53BDE572435DAD9006BD7C0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A53BDE582435DB12006BD7C0 /* LocationManagerDelegate.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +288,7 @@
 				A53BDE2424351AD6006BD7C0 /* ImageOperation.swift in Sources */,
 				A53107002431F756005C95F7 /* ForecastViewController.swift in Sources */,
 				A531073224331228005C95F7 /* DustInfoModel.swift in Sources */,
+				A53BDE592435DB12006BD7C0 /* LocationManagerDelegate.swift in Sources */,
 				A53106FE2431F756005C95F7 /* ChartViewController.swift in Sources */,
 				A531072D2432FD4E005C95F7 /* ChartTableViewDatasource.swift in Sources */,
 				A53BDE222434C76A006BD7C0 /* ImageManager.swift in Sources */,

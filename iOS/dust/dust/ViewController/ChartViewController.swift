@@ -25,6 +25,7 @@ class ChartViewController: UIViewController {
     private let emoticonUnicode = ["Good" : "\u{1F600}", "Normal" : "\u{1F642}", "Bad" : "\u{1F637}", "Terrible" : "\u{1F631}"]
     
     private let locationManager = CLLocationManager()
+    private let locationManagerDelegate = LocationManagerDelegate()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +39,7 @@ class ChartViewController: UIViewController {
         changeGradationViewUI(model: modelManager.index(of: 0))
         
         NotificationCenter.default.addObserver(self,
-                                               selector: #selector(changeSummaryViewUI(_:)),
+                                               selector: #selector(changeGradientViewUI(_:)),
                                                name: .FirstCellOnTalbeView,
                                                object: nil)
     }
@@ -46,6 +47,7 @@ class ChartViewController: UIViewController {
     func setupDelegate() {
         delegate.modelManager = modelManager
         self.chartTableView.delegate = delegate
+        self.locationManager.delegate = locationManagerDelegate
     }
     
     func setupDatasource() {
@@ -64,7 +66,7 @@ class ChartViewController: UIViewController {
         }
     }
     
-    @objc func changeSummaryViewUI(_ notification: Notification) {
+    @objc func changeGradientViewUI(_ notification: Notification) {
         guard let model = notification.userInfo?["model"] as? DustInfoModel else {return}
         changeGradationViewUI(model: model)
     }
