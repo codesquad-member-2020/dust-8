@@ -14,6 +14,7 @@ public class ResponseResult {
     }
 
     public ResponseResult(Object resultData) {
+        this.valid = true;
         result = resultData;
     }
 
