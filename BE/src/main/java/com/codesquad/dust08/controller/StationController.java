@@ -79,7 +79,8 @@ public class StationController {
         log.debug("stationName : {}" , stationName);
 
         return ResponseEntity.status(HttpStatus.OK)
-                .body("{ \"stationName\" : " + stationName + " }" );
+                .body(new ResponseResult(stationName));
+
     }
 
     // 특정 측정소의 최근 측정된 미세먼지 등급 반환
