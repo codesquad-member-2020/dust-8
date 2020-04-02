@@ -41,4 +41,12 @@ const renderCharts = numerics => {
   renderDustInfo(targetInfo1, targetInfo2);
 };
 
-export { renderLocation, renderCharts };
+const renderDustInfo = ({ EMOJI, COLOR, STATE }, numeric, time = currentHours) => {
+  renderCurrentHours(time);
+  qs$(".info-emoji").innerText = EMOJI;
+  qs$(".info-grade").innerText = STATE;
+  qs$(".statistics-numeric").innerText = numeric;
+  qs$(".info-window").style.background = `linear-gradient(to bottom, ${COLOR}, #fff)`;
+};
+
+export { renderLocation, renderCharts, renderDustInfo };
