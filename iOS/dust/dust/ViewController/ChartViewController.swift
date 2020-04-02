@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class ChartViewController: UIViewController {
     
@@ -23,9 +24,12 @@ class ChartViewController: UIViewController {
     private var delegate = ChartTableViewDelegate()
     private let emoticonUnicode = ["Good" : "\u{1F600}", "Normal" : "\u{1F642}", "Bad" : "\u{1F637}", "Terrible" : "\u{1F631}"]
     
+    private let locationManager = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
+        getPermission()
         setupDelegate()
         setupDatasource()
         
@@ -63,6 +67,28 @@ class ChartViewController: UIViewController {
     @objc func changeSummaryViewUI(_ notification: Notification) {
         guard let model = notification.userInfo?["model"] as? DustInfoModel else {return}
         changeGradationViewUI(model: model)
+    }
+    
+    func getPermission() {
+        let status = CLLocationManager.authorizationStatus()
+        
+        switch status {
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+            return
+            
+        case .denied, .restricted:
+            let alert = UIAlertController(title: "위치 서비스 사용 불가", message: "설정에서 위치 정보 서비스를 허용해주세요.", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "예", style: .default, handler: nil)
+            alert.addAction(okAction)
+            
+            present(alert, animated: true, completion: nil)
+            return
+        case .authorizedAlways, .authorizedWhenInUse:
+            break
+        @unknown default:
+            fatalError("unknown error")
+        }
     }
 }
 
