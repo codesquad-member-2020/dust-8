@@ -26,6 +26,7 @@ class ChartViewController: UIViewController {
     
     private let locationManager = CLLocationManager()
     private let locationManagerDelegate = LocationManagerDelegate()
+    private var station: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,12 +37,16 @@ class ChartViewController: UIViewController {
         
         self.emoticonLabel.font = UIFont(name: "TimesNewRomanPSMT", size: self.gradationView.frame.height * 0.35)
         
-        changeGradationViewUI(model: modelManager.index(of: 0))
-        
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(changeGradientViewUI(_:)),
                                                name: .FirstCellOnTalbeView,
                                                object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(getStationName(_:)),
+                                               name: .sendStationName,
+                                               object: nil)
+        
+        locationManager.startUpdatingLocation()
     }
     
     func setupDelegate() {
@@ -59,8 +64,6 @@ class ChartViewController: UIViewController {
         DispatchQueue.main.async {
             self.gradationView.setGradientColor(state: "\(model.grade)")
             self.numericLabel.text = String(model.numeric)
-            self.stationLabel.text = String(model.station)
-            self.timeLabel.text = String(model.time)
             self.gradeLabel.text = "\(model.grade)"
             self.emoticonLabel.text = self.emoticonUnicode["\(model.grade)"]
         }
@@ -90,6 +93,18 @@ class ChartViewController: UIViewController {
             break
         @unknown default:
             fatalError("unknown error")
+        }
+    }
+    
+    @objc func getStationName(_ notification: Notification) {
+        guard let coordinate = notification.userInfo?["coordinate"] as?  CLLocationCoordinate2D else {return}
+        NetworkConnection.request(resource: "https://dust08.herokuapp.com/stations?latitude=\(coordinate.latitude)&longitude=\(coordinate.longitude)"){
+            do {
+                guard let json = try JSONSerialization.jsonObject(with: $0, options: []) as? [String:Any] else {return}
+                self.station = json["result"] as! String?
+            } catch {
+                fatalError("관측소 오류!")
+            }
         }
     }
 }
