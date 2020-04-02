@@ -10,7 +10,7 @@ import Foundation
 
 struct DustInfoModels: Codable {
     
-    var models: [DustInfoModel]
+    private(set) var models: [DustInfoModel]
     
     enum CodingKeys: String, CodingKey {
         case models = "result"
@@ -19,13 +19,19 @@ struct DustInfoModels: Codable {
 
 struct DustInfoModel: Codable {
 
-    var numeric: Int
-    var grade: Int
-    var time: Date
+    private(set) var numeric: Int
+    private(set) var grade: Int
+    private(set) var time: Date
     
     enum CodingKeys: String, CodingKey {
         case numeric = "pm10Value"
         case grade = "pm10Grade1h"
         case time = "dataTime"
+    }
+    
+    init() {
+        numeric = 0
+        grade = 0
+        time = Date()
     }
 }
