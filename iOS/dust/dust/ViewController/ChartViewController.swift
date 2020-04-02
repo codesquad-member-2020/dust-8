@@ -18,6 +18,7 @@ class ChartViewController: UIViewController {
     @IBOutlet weak var numericLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var stationLabel: UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     private var modelManager = DustInfoModelManager()
     private var dataSource = ChartTableViewDatasource()
@@ -148,6 +149,7 @@ class ChartViewController: UIViewController {
         setupDelegate()
         setupDatasource()
         DispatchQueue.main.async {
+            self.activityIndicator.stopAnimating()
             self.chartTableView.reloadData()
         }
     }

@@ -155,6 +155,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="미세먼지" image="smoke.fill" catalog="system" selectedImage="smoke.fill" id="acW-dT-cKf"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="grY-x5-0QE" id="Zcn-jg-3JD"/>
                         <outlet property="chartTableView" destination="9FS-mc-NMH" id="SBm-Q5-myi"/>
                         <outlet property="emoticonLabel" destination="iKa-9G-F3U" id="CMj-xJ-mKD"/>
                         <outlet property="gradationView" destination="dR7-rR-qTR" id="rGn-wC-JAn"/>
