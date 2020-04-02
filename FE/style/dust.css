@@ -45,11 +45,15 @@ span.statistics-numeric:after {
 }
 
 span.statistics-time:before {
-  content: "오늘 ";
+  content: attr(data-before);
 }
 
 span.statistics-time:after {
   content: ":00";
+}
+
+.dummy-chart {
+  height: 260px;
 }
 
 .dust-charts {
