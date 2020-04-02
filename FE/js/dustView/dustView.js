@@ -20,7 +20,8 @@ const renderCharts = numerics => {
   let targetInfo2;
 
   numerics.forEach(({ dataTime, pm10Value, pm10Grade1h }) => {
-    const currentGrade = GRADE[gradeList[pm10Grade1h - 1]];
+    const grade = pm10Grade1h === 0 ? pm10Grade1h : pm10Grade1h - 1;
+    const currentGrade = GRADE[gradeList[grade]];
 
     qs$(".chart--horiz").innerHTML += `
     <li class="chart__bar" style="width: ${Number(pm10Value) / 2}%; background: ${
