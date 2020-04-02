@@ -22,7 +22,7 @@ const getPosition = () => {
 
 const fetchLocation = () => {
   getPosition().then(position => {
-    return fetchRequest("http://192.168.1.42:8080/" + process.env.SERVICELOCATION, position)
+    return fetchRequest(process.env.SERVICE_URL + process.env.SERVICELOCATION, position)
       .then(stationName => {
         if (!stationName.result) {
           alert(stationName.errorMessage);
