@@ -17,10 +17,14 @@ class ForecastViewController: UIViewController {
     @IBOutlet weak var acitivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var forecastImageVIew: UIImageView!
     @IBOutlet weak var slider: UISlider!
+    
     @IBAction func sliderChanged(_ sender: UISlider) {
         DispatchQueue.main.async {
             self.forecastImageVIew.image = self.imageManager.index(of: Int(sender.value))
         }
+        operationQueue.cancelAllOperations()
+        NotificationCenter.default.post(name: .setButtonImagePlay,
+                                        object: nil)
     }
     
     override func viewDidLoad() {
@@ -52,7 +56,14 @@ class ForecastViewController: UIViewController {
             operationQueue.cancelAllOperations()
         } else {
             let operation = ImageOperation(slider: slider, imageView: forecastImageVIew, imageManager: imageManager)
+            operation.completionBlock = {
+                if !operation.isCancelled {
+                    NotificationCenter.default.post(name: .setButtonImagePlay,
+                                                    object: nil)
+                }
+            }
             operationQueue.addOperation(operation)
+            
         }
     }
     
@@ -68,4 +79,8 @@ extension UISlider {
         self.maximumValue = max
         self.minimumValue = min
     }
+}
+
+extension Notification.Name {
+    static let setButtonImagePlay = Notification.Name("setButtonImagePlay")
 }
