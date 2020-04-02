@@ -24,14 +24,12 @@ class ImageManager {
     
     func downloadImages() {
         urlString.forEach { url in
-            OperationQueue().addOperation {
-                NetworkConnection.request(resource: url) {
-                    self.images.append(UIImage(data: $0) ?? UIImage())
-                    self.received += 1
-                    if self.received == self.urlString.count {
-                        NotificationCenter.default.post(name: .downloadFinished,
-                                                        object: nil)
-                    }
+            NetworkConnection.request(resource: url) {
+                self.images.append(UIImage(data: $0) ?? UIImage())
+                self.received += 1
+                if self.received == self.urlString.count {
+                    NotificationCenter.default.post(name: .downloadFinished,
+                                                    object: nil)
                 }
             }
         }

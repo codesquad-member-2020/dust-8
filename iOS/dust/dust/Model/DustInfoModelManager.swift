@@ -17,9 +17,6 @@ class DustInfoModelManager {
     }
     
     init() {
-        for index in 0..<24 {
-            model.append(DustInfoModel(numeric: Int.random(in: 0...200), station: "강남구", time: String(index)))
-        }
     }
     
     func index(of index: Int) -> DustInfoModel{
