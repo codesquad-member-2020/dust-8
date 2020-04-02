@@ -50,7 +50,7 @@ public class ForecaseController {
         String searchDate;
 
         // 디테일 시간 구현 필요
-        if (currentTime.getHour() < 17) searchDate = LocalDate.now().minusDays(1).toString();
+        if (currentTime.getHour() < 5) searchDate = LocalDate.now().minusDays(1).toString();
         else searchDate = LocalDate.now().toString();
 
 
