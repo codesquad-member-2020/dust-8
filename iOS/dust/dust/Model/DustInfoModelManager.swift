@@ -17,9 +17,28 @@ class DustInfoModelManager {
     }
     
     init() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(receiveDustInfo(_:)),
+                                               name: .receiveDustInfoFinished,
+                                               object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     func index(of index: Int) -> DustInfoModel{
         return model[index]
     }
+    
+    @objc func receiveDustInfo(_ notification: Notification) {
+        guard let model = notification.userInfo?["model"] as? [DustInfoModel] else {return}
+        self.model = model
+        NotificationCenter.default.post(name: .setupDustModelComplete,
+                                        object: nil)
+    }
+}
+
+extension Notification.Name {
+    static let setupDustModelComplete = Notification.Name("setupDustModelComplete")
 }
