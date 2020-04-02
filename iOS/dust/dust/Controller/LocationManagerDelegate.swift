@@ -11,10 +11,10 @@ import CoreLocation
 class LocationManagerDelegate: NSObject, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let currentLocation = locations.last {
+            manager.stopUpdatingLocation()
             NotificationCenter.default.post(name: .sendStationName,
                                             object: nil,
                                             userInfo: ["coordinate" : currentLocation.coordinate])
-            manager.stopUpdatingLocation()
         }
     }
     

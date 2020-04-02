@@ -8,34 +8,24 @@
 
 import Foundation
 
-struct DustInfoModel {
+struct DustInfoModels: Codable {
     
-    enum Grade: String, CaseIterable, CustomStringConvertible {
-        var description: String {
-            return self.rawValue
-        }
-        
-        case Good
-        case Normal
-        case Bad
-        case Terrible
-        
-        init(index: Int) {
-            self = Grade.allCases[index]
-        }
+    var models: [DustInfoModel]
+    
+    enum CodingKeys: String, CodingKey {
+        case models = "result"
     }
-    
+}
+
+struct DustInfoModel: Codable {
+
     var numeric: Int
-    var percentage: Double
-    var grade: Grade
-    var station: String
-    var time: String
+    var grade: Int
+    var time: Date
     
-    init(numeric: Int, station: String, time: String) {
-        self.numeric = numeric
-        self.percentage = (Double(numeric) > 200.0 ? 200.0 : Double(numeric)) / 200
-        self.grade = Grade(index: Int(percentage * 100) / (100 / Grade.allCases.count) >= 4 ? 3 : Int(percentage * 100) / (100 / Grade.allCases.count))
-        self.station = station
-        self.time = String(time) + ":00"
+    enum CodingKeys: String, CodingKey {
+        case numeric = "pm10Value"
+        case grade = "pm10Grade1h"
+        case time = "dataTime"
     }
 }
