@@ -103,14 +103,14 @@
                                                             <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6x-Wr-ISc">
-                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="365" height="40"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="A6x-Wr-ISc" secondAttribute="trailing" id="Hb0-M1-EkI"/>
+                                                        <constraint firstAttribute="trailing" secondItem="A6x-Wr-ISc" secondAttribute="trailing" constant="10" id="Hb0-M1-EkI"/>
                                                         <constraint firstItem="A6x-Wr-ISc" firstAttribute="leading" secondItem="TKB-vy-6tX" secondAttribute="leading" id="OLl-hw-okT"/>
                                                         <constraint firstItem="A6x-Wr-ISc" firstAttribute="top" secondItem="TKB-vy-6tX" secondAttribute="top" id="PVr-o4-zBY"/>
                                                         <constraint firstAttribute="bottom" secondItem="A6x-Wr-ISc" secondAttribute="bottom" id="x9s-qz-Vgp"/>
@@ -188,15 +188,15 @@
                                     <constraint firstAttribute="width" secondItem="EOD-yu-Lm9" secondAttribute="height" multiplier="1:1" id="A18-7K-NrH"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xkH-L1-OIc">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xkH-L1-OIc">
                                 <rect key="frame" x="10" y="500.00000000000006" width="355" height="56.666666666666686"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wr0-JK-qhJ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wr0-JK-qhJ">
                                 <rect key="frame" x="10" y="566.66666666666663" width="355" height="57"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -252,7 +252,9 @@
                     <tabBarItem key="tabBarItem" title="예보" image="clock.fill" catalog="system" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="acitivityIndicator" destination="LmH-OB-HHK" id="3Py-Gd-gc0"/>
+                        <outlet property="forecastContent" destination="wr0-JK-qhJ" id="Si7-HW-Mku"/>
                         <outlet property="forecastImageVIew" destination="EOD-yu-Lm9" id="gq2-qI-1vg"/>
+                        <outlet property="gradeOfCities" destination="xkH-L1-OIc" id="NDt-HP-uiO"/>
                         <outlet property="playButton" destination="9bz-cR-PaJ" id="mWT-c1-nNq"/>
                         <outlet property="slider" destination="iWS-Qo-Jhb" id="fpV-ZP-geQ"/>
                     </connections>
