@@ -12,11 +12,15 @@ class ForecastViewController: UIViewController {
     
     private let imageManager = ImageManager()
     private let operationQueue = OperationQueue()
+    @IBOutlet weak var gradeOfCities: UILabel!
+    @IBOutlet weak var forecastContent: UILabel!
     
     @IBOutlet weak var playButton: PlayButton!
     @IBOutlet weak var acitivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var forecastImageVIew: UIImageView!
     @IBOutlet weak var slider: UISlider!
+    
+    private let endPoint = "http://ec2-54-180-115-105.ap-northeast-2.compute.amazonaws.com:8080"
     
     @IBAction func sliderChanged(_ sender: UISlider) {
         DispatchQueue.main.async {
@@ -29,7 +33,6 @@ class ForecastViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageManager.downloadImages()
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(downloadFinished),
                                                name: .downloadFinished,
@@ -38,6 +41,26 @@ class ForecastViewController: UIViewController {
                                                selector: #selector(play(_:)),
                                                name: .playButtonPushed,
                                                object: nil)
+        
+        NetworkConnection.request(resource: endPoint + "/forecase") {
+            do {
+                let decoder = JSONDecoder()
+                let model = try decoder.decode(ForecastModel.self, from: $0)
+                model.forecastInfo.imagesURL.forEach {
+                    print($0)
+                }
+                
+                DispatchQueue.main.async {
+                    self.gradeOfCities.text = model.forecastInfo.gradeOfCities
+                    self.forecastContent.text = model.forecastInfo.forecastContent
+                }
+                NotificationCenter.default.post(name: .receiveImagesURLFinished,
+                                                object: nil,
+                                                userInfo: ["imagesURL" : model.forecastInfo.imagesURL])
+            } catch {
+                fatalError()
+            }
+        }
     }
     
     @objc func downloadFinished() {
@@ -56,12 +79,6 @@ class ForecastViewController: UIViewController {
             operationQueue.cancelAllOperations()
         } else {
             let operation = ImageOperation(slider: slider, imageView: forecastImageVIew, imageManager: imageManager)
-            operation.completionBlock = {
-                if !operation.isCancelled {
-                    NotificationCenter.default.post(name: .setButtonImagePlay,
-                                                    object: nil)
-                }
-            }
             operationQueue.addOperation(operation)
             
         }
@@ -83,4 +100,5 @@ extension UISlider {
 
 extension Notification.Name {
     static let setButtonImagePlay = Notification.Name("setButtonImagePlay")
+    static let receiveImagesURLFinished = Notification.Name("receiveImagesURLFinished")
 }

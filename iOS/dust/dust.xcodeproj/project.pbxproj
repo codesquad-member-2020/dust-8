@@ -26,6 +26,9 @@
 		A53BDE222434C76A006BD7C0 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53BDE212434C76A006BD7C0 /* ImageManager.swift */; };
 		A53BDE2424351AD6006BD7C0 /* ImageOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53BDE2324351AD6006BD7C0 /* ImageOperation.swift */; };
 		A53BDE592435DB12006BD7C0 /* LocationManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53BDE582435DB12006BD7C0 /* LocationManagerDelegate.swift */; };
+		A53BDE5F24365DAC006BD7C0 /* DustGrade.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53BDE5E24365DAC006BD7C0 /* DustGrade.swift */; };
+		A53BDE612436F879006BD7C0 /* ForecastModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53BDE602436F879006BD7C0 /* ForecastModel.swift */; };
+		A53BDE6324371364006BD7C0 /* DayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53BDE6224371364006BD7C0 /* DayExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +65,9 @@
 		A53BDE212434C76A006BD7C0 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		A53BDE2324351AD6006BD7C0 /* ImageOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageOperation.swift; sourceTree = "<group>"; };
 		A53BDE582435DB12006BD7C0 /* LocationManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerDelegate.swift; sourceTree = "<group>"; };
+		A53BDE5E24365DAC006BD7C0 /* DustGrade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DustGrade.swift; sourceTree = "<group>"; };
+		A53BDE602436F879006BD7C0 /* ForecastModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastModel.swift; sourceTree = "<group>"; };
+		A53BDE6224371364006BD7C0 /* DayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +109,7 @@
 		A53106F82431F756005C95F7 /* dust */ = {
 			isa = PBXGroup;
 			children = (
+				A53BDE642437136E006BD7C0 /* Extension */,
 				A53BDE572435DAD9006BD7C0 /* Controller */,
 				A531073024331203005C95F7 /* Model */,
 				A531072124324B1C005C95F7 /* View */,
@@ -167,10 +174,12 @@
 		A531073024331203005C95F7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A53BDE212434C76A006BD7C0 /* ImageManager.swift */,
 				A531073124331228005C95F7 /* DustInfoModel.swift */,
 				A531073324337E55005C95F7 /* DustInfoModelManager.swift */,
 				A53BDE1F2434C6E0006BD7C0 /* NetworkConnection.swift */,
-				A53BDE212434C76A006BD7C0 /* ImageManager.swift */,
+				A53BDE5E24365DAC006BD7C0 /* DustGrade.swift */,
+				A53BDE602436F879006BD7C0 /* ForecastModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -181,6 +190,14 @@
 				A53BDE582435DB12006BD7C0 /* LocationManagerDelegate.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		A53BDE642437136E006BD7C0 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A53BDE6224371364006BD7C0 /* DayExtension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,12 +301,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A53BDE6324371364006BD7C0 /* DayExtension.swift in Sources */,
 				A531072B2432FB8D005C95F7 /* ChartTableViewCell.swift in Sources */,
 				A53BDE2424351AD6006BD7C0 /* ImageOperation.swift in Sources */,
 				A53107002431F756005C95F7 /* ForecastViewController.swift in Sources */,
 				A531073224331228005C95F7 /* DustInfoModel.swift in Sources */,
 				A53BDE592435DB12006BD7C0 /* LocationManagerDelegate.swift in Sources */,
 				A53106FE2431F756005C95F7 /* ChartViewController.swift in Sources */,
+				A53BDE612436F879006BD7C0 /* ForecastModel.swift in Sources */,
 				A531072D2432FD4E005C95F7 /* ChartTableViewDatasource.swift in Sources */,
 				A53BDE222434C76A006BD7C0 /* ImageManager.swift in Sources */,
 				A53BDE1A2434B332006BD7C0 /* PlayButton.swift in Sources */,
@@ -297,6 +316,7 @@
 				A53106FA2431F756005C95F7 /* AppDelegate.swift in Sources */,
 				A53BDE202434C6E0006BD7C0 /* NetworkConnection.swift in Sources */,
 				A531073424337E55005C95F7 /* DustInfoModelManager.swift in Sources */,
+				A53BDE5F24365DAC006BD7C0 /* DustGrade.swift in Sources */,
 				A53106FC2431F756005C95F7 /* SceneDelegate.swift in Sources */,
 				A531072F2432FD73005C95F7 /* ChartTableViewDelegate.swift in Sources */,
 			);

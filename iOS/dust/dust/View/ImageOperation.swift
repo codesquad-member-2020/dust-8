@@ -20,13 +20,23 @@ class ImageOperation: Operation {
     }
     
     override func main() {
-        for index in 0..<imageManager.count() {
+        var index = 0
+        while true {
             if (!self.isCancelled && !isFinished) {
                 DispatchQueue.main.async {
                     self.slider.value = Float(index)
                     self.imageView.image = self.imageManager.index(of: index)
                 }
                 sleep(1)
+            }
+            
+            index += 1
+            if index >= imageManager.count() {
+                index = 0
+            }
+            
+            if (self.isCancelled || isFinished) {
+                break
             }
         }
     }

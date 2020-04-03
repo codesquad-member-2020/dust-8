@@ -24,9 +24,9 @@ class GradationView: UIView {
         self.gradientLayer.frame = self.bounds
     }
     
-    func setGradientColor(state: String) {
+    func setGradientColor(grade: Int) {
         DispatchQueue.main.async {
-            self.gradientLayer.colors = [UIColor(named: state)?.cgColor ?? UIColor.white.cgColor, UIColor.white.cgColor]
+            self.gradientLayer.colors = [UIColor(named: DustGrade.Grade(index: grade).rawValue)?.cgColor ?? UIColor.white.cgColor, UIColor.white.cgColor]
             self.layer.insertSublayer(self.gradientLayer, at: 0)
         }
     }
