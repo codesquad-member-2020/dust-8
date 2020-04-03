@@ -6,10 +6,10 @@ const getPosition = () => {
   return new Promise((resolve, reject) => {
     navigator.geolocation.getCurrentPosition(resolve, reject);
   })
-    .then(pos => {
+    .then(({ coords }) => {
       return {
-        latitude: pos.coords.latitude,
-        longitude: pos.coords.longitude
+        latitude: coords.latitude,
+        longitude: coords.longitude
       };
     })
     .catch(() => {
@@ -24,9 +24,8 @@ const fetchLocation = () => {
   getPosition().then(position => {
     return fetchRequest(process.env.SERVICE_URL + process.env.SERVICELOCATION, position)
       .then(stationName => {
-        if (!stationName.result) {
-          alert(stationName.errorMessage);
-        }
+        if (!stationName.result) alert(stationName.errorMessage);
+
         renderLocation(stationName.result);
         getDustStatus(stationName.result);
       })
