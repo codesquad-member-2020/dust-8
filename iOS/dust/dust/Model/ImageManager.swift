@@ -10,31 +10,30 @@ import UIKit
 
 class ImageManager {
     private var images: [UIImage]
-    private let urlString = [
-        "http://www.airkorea.or.kr/file/viewImage/?atch_id=138717",
-        "http://www.airkorea.or.kr/file/viewImage/?atch_id=138718",
-        "http://www.airkorea.or.kr/file/viewImage/?atch_id=138719"
-    ]
-    private var received = 0
-    
     
     init() {
         self.images = [UIImage]()
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(showImage(_:)),
+                                               name: .receiveImagesURLFinished,
+                                               object: nil)
     }
     
-    func downloadImages() {
-        urlString.forEach { url in
-            NetworkConnection.request(resource: url) {
-                self.images.append(UIImage(data: $0) ?? UIImage())
-                self.received += 1
-                if self.received == self.urlString.count {
-                    NotificationCenter.default.post(name: .downloadFinished,
-                                                    object: nil)
-                }
+    @objc func showImage(_ notification: Notification) {
+        guard let urls = notification.userInfo?["imagesURL"] as? [String] else {return}
+        urls.forEach {
+            do {
+                let url = URL(string: $0)
+                let data = try Data(contentsOf: url!)
+                images.append(UIImage(data: data) ?? UIImage())
+            } catch {
+                
             }
         }
+        NotificationCenter.default.post(name: .downloadFinished,
+                                        object: nil)
     }
-    
+
     func index(of index: Int) -> UIImage? {
         return images[index]
     }
