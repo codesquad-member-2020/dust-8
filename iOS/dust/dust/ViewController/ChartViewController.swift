@@ -23,7 +23,8 @@ class ChartViewController: UIViewController {
     private var modelManager = DustInfoModelManager()
     private var dataSource = ChartTableViewDatasource()
     private var delegate = ChartTableViewDelegate()
-    private let emoticonUnicode = ["Good" : "\u{1F600}", "Normal" : "\u{1F642}", "Bad" : "\u{1F637}", "Terrible" : "\u{1F631}"]
+    private let emoticonUnicode = ["\u{1F600}", "\u{1F600}", "\u{1F642}", "\u{1F637}", "\u{1F631}"]
+    private let endPoint = "http://ec2-54-180-115-105.ap-northeast-2.compute.amazonaws.com:8080"
     
     private let locationManager = CLLocationManager()
     private let locationManagerDelegate = LocationManagerDelegate()
@@ -73,10 +74,13 @@ class ChartViewController: UIViewController {
     
     func changeGradationViewUI(model: DustInfoModel) {
         DispatchQueue.main.async {
-            self.gradationView.setGradientColor(state: "\(model.grade)")
-            self.numericLabel.text = String(model.numeric)
+            self.gradationView.setGradientColor(grade: model.grade)
+            self.numericLabel.text = String(model.numeric) + "𝜇g/m³"
             self.gradeLabel.text = "\(model.grade)"
-            self.emoticonLabel.text = self.emoticonUnicode["\(model.grade)"]
+            self.stationLabel.text = String(self.station ?? "")
+            self.timeLabel.text = Calendar.calculateDay.getHourMinuteString(date: model.time)
+            self.gradeLabel.text = "\(DustGrade.Grade(index: model.grade).rawValue)"
+            self.emoticonLabel.text = self.emoticonUnicode[model.grade]
         }
     }
     
@@ -109,7 +113,7 @@ class ChartViewController: UIViewController {
     
     @objc func getStationName(_ notification: Notification) {
         guard let coordinate = notification.userInfo?["coordinate"] as?  CLLocationCoordinate2D else {return}
-        NetworkConnection.request(resource: "http://ec2-54-180-115-105.ap-northeast-2.compute.amazonaws.com:8080/stations?latitude=\(coordinate.latitude)&longitude=\(coordinate.longitude)"){
+        NetworkConnection.request(resource: endPoint + "/stations?latitude=\(coordinate.latitude)&longitude=\(coordinate.longitude)"){
             do {
                 guard let json = try JSONSerialization.jsonObject(with: $0, options: []) as? [String:Any] else {return}
                 self.station = json["result"] as! String?
@@ -124,7 +128,7 @@ class ChartViewController: UIViewController {
     @objc func getDustInfo() {
         if let stationName = station {
             NetworkConnection.request(resource:
-            "http://ec2-54-180-115-105.ap-northeast-2.compute.amazonaws.com:8080/stations/dust-status?stationName=\(stationName)") {
+            endPoint + "/stations/dust-status?stationName=\(stationName)") {
                 do {
                     let decoder = JSONDecoder()
                     decoder.dateDecodingStrategy = .formatted(DateFormatter.dateConverter)
@@ -152,20 +156,11 @@ class ChartViewController: UIViewController {
             self.activityIndicator.stopAnimating()
             self.chartTableView.reloadData()
         }
+        changeGradationViewUI(model: modelManager.index(of: 0))
     }
 }
 
 extension Notification.Name {
     static let receiveStationFinished = Notification.Name("receiveStationFinished")
     static let receiveDustInfoFinished = Notification.Name("receiveDustInfoFinished")
-}
-
-extension DateFormatter {
-    static let dateConverter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd HH:mm"
-        formatter.calendar = Calendar(identifier: .iso8601)
-        formatter.timeZone = TimeZone(secondsFromGMT: 0)
-        return formatter
-    }()
 }
