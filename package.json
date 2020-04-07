@@ -1,0 +1,35 @@
+{
+  "name": "dust-8",
+  "version": "1.0.0",
+  "main": "main.js",
+  "dependencies": {
+    "@babel/runtime": "^7.9.2",
+    "@babel/runtime-corejs3": "^7.9.2",
+    "dotenv": "^8.2.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-transform-runtime": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "babel-loader": "^8.1.0",
+    "dotenv-webpack": "^1.7.0",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
+  },
+  "scripts": {
+    "build": "webpack -w",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codesquad-member-2020/dust-8.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codesquad-member-2020/dust-8/issues"
+  },
+  "homepage": "https://github.com/codesquad-member-2020/dust-8#readme"
+}
